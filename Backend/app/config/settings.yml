@@ -1,0 +1,4 @@
+parameters:
+    frontend_url: https://dev.runctrl.com
+    backend_url: https://api-dev.runctrl.com
+    system_email: team@runctrl.com
