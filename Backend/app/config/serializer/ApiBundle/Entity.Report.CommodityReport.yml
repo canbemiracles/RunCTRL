@@ -1,0 +1,13 @@
+ApiBundle\Entity\Report\CommodityReport:
+  exclusion_policy: ALL
+  properties:
+    title:
+      expose: true
+    description:
+      expose: true
+
+  virtual_properties:
+        getBranchId:
+          serialized_name: branch_id
+        getBranchStationId:
+          serialized_name: branch_station_id

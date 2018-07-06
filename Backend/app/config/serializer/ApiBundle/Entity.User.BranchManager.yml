@@ -1,0 +1,7 @@
+ApiBundle\Entity\User\BranchManager:
+  exclusion_policy: ALL
+  properties:
+
+  virtual_properties:
+        getBranchId:
+          serialized_name: branch_id

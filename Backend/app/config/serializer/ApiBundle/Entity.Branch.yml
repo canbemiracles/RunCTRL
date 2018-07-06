@@ -1,0 +1,27 @@
+ApiBundle\Entity\Branch:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    company:
+      expose: true
+    supervisor:
+      expose: true
+    branch_manager:
+      expose: true
+    geographical_area:
+      expose: true
+    shifts:
+      expose: true
+    stations:
+      expose: true
+    co_managers:
+      expose: true
+    employees:
+      expose: true
+    police_phone:
+      expose: true
+    fire_phone:
+      expose: true
+    ambulance_phone:
+      expose: true

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome!</title>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    </head>
+    <body>
+            Homepage.
+
+    <script type="text/javascript" src="/bundles/goswebsocket/js/gos_web_socket_client.js"></script>
+    <script type="text/javascript" src="/bundles/goswebsocket/js/vendor/autobahn.min.js"></script>
+
+    <script type="text/javascript">
+        var webSocket = WS.connect("ws://127.0.0.1:8080");
+        webSocket.on("socket/connect", function(session){
+            //session is an Autobahn JS WAMP session.
+
+            console.log("Successfully Connected!");
+            console.log('subscribing to notifications!')
+            session.subscribe("notifications", function(uri, payload){
+                console.log("Received notification: ", payload.notification);
+            });
+            console.log('Searching...');
+            session.call('search/search', {type: 'employee', term: 'Aviles'}).then(
+                function(result)
+                {
+                    console.log('RPC SEARCH VALID RESULT! :', result);
+                },
+                function(error,desc)
+                {
+                    console.log('RPC SEARCH ERROR! :', error, desc);
+                }
+            )
+        })
+        webSocket.on("socket/disconnect", function(error){
+            //error provides us with some insight into the disconnection: error.reason and error.code
+
+            console.log("Disconnected for " + error.reason + " with code " + error.code);
+        })
+    </script>
+    </body>
+</html>

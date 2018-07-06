@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'unit',
+1 verbose cli   '--no-cache' ]
+2 info using npm@5.4.1
+3 info using node@v6.11.1
+4 verbose run-script [ 'preunit', 'unit', 'postunit' ]
+5 info lifecycle rc-frontend@1.0.0~preunit: rc-frontend@1.0.0
+6 info lifecycle rc-frontend@1.0.0~unit: rc-frontend@1.0.0
+7 verbose lifecycle rc-frontend@1.0.0~unit: unsafe-perm in lifecycle true
+8 verbose lifecycle rc-frontend@1.0.0~unit: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;D:\OSPanel\domains\run-control\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Каринэ\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\program files (x86)\skype\Phone;C:\Program Files\nodejs;C:\HashiCorp\Vagrant\bin;C:\Ruby24-x64\bin;C:\Users\Каринэ\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin
+9 verbose lifecycle rc-frontend@1.0.0~unit: CWD: D:\OSPanel\domains\run-control
+10 silly lifecycle rc-frontend@1.0.0~unit: Args: [ '/d /s /c', 'jest' ]
+11 silly lifecycle rc-frontend@1.0.0~unit: Returned: code: 1  signal: null
+12 info lifecycle rc-frontend@1.0.0~unit: Failed to exec unit script
+13 verbose stack Error: rc-frontend@1.0.0 unit: `jest`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\index.js:280:16)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at EventEmitter.emit (events.js:191:7)
+13 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\lib\spawn.js:55:14)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at ChildProcess.emit (events.js:191:7)
+13 verbose stack     at maybeClose (internal/child_process.js:891:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose pkgid rc-frontend@1.0.0
+15 verbose cwd D:\OSPanel\domains\run-control
+16 verbose Windows_NT 6.1.7601
+17 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "unit" "--no-cache"
+18 verbose node v6.11.1
+19 verbose npm  v5.4.1
+20 error code ELIFECYCLE
+21 error errno 1
+22 error rc-frontend@1.0.0 unit: `jest`
+22 error Exit status 1
+23 error Failed at the rc-frontend@1.0.0 unit script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]

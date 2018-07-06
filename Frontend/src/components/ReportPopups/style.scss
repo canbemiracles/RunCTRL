@@ -1,0 +1,157 @@
+.branchStatus{
+    /deep/ .modal-header{
+        color: #fff;
+        margin: 5px;
+        margin-bottom: 0;
+        padding: 0;
+        align-items: center;
+        .header-report{
+            width: 100%;
+            &.green{
+                background-color: #9ece2f;
+                padding: 10px 5px 10px 30px;
+            }
+        }
+    }
+    .title{
+        font-family: 'Roboto-Regular', sans-serif;
+        font-size: 22px;
+    }
+    /deep/ .close{
+        color: #fff;
+        font-family: 'Roboto-Light', sans-serif;
+        margin-left: auto;
+        margin-right: 0;
+        position: relative;
+        top: -2px;
+        font-weight: 100;
+        &:focus{
+            box-shadow: none;
+            outline: none;
+        }
+    }
+    /deep/ .modal-dialog{
+        width: 100%;
+        max-width: 888px;
+    }
+    /deep/ .modal-content{
+       border-radius: 2px;
+       border: none;
+       box-shadow: 0 10px 20px rgba(#1c3c4d, .3);
+    }
+    /deep/ .modal-body{
+        padding: 0;
+        border: 0;
+    }
+    /deep/ .modal-footer{
+        padding: 0;
+        border: 0;
+    }
+    .report-time{
+        align-items: center;
+    }
+    .branch-status-top{
+        padding: 0 35px;
+    }
+    .branch-name{
+       font-size: 22px;
+       color: $gray;
+       margin-right: auto;
+    }
+    .modal-row{
+        display: flex;
+        padding: 20px 0;
+        border-bottom: 1px solid #e6ebed;
+        &:last-child{
+            border: none;
+        }
+    }
+    .sub-title{
+        font-size: 16px;
+        color: #627680;
+    }
+    .info-top-value{
+       font-size: 40px;
+       color: #2e3a40;
+       white-space: nowrap;
+       text-align: left;
+    }
+    .not-started{
+        font-size: 21px;
+    }
+    .date{
+       font-size: 15px;
+       color:  #7e8a90;
+       text-align: left;
+    }
+    .modal-col{
+        border-right: 1px solid #e6ebed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &:last-child{
+            border: none;
+        }
+    }
+    .report-time{
+        color: #7e8a90;
+        font-size: 15px;
+    }
+    .tasks-chart{
+        width: 140px;
+        height: 140px;
+    }
+    .total-value{
+       font-size: 40px;
+       color: $gray;
+    }
+    .total-desc{
+        color: #7e8a90;
+        font-size: 15px;
+    }
+    .task-count{
+        padding: 0 15px;
+        align-self: center;
+        /deep/ p{
+          font-family: 'Roboto-Regular', sans-serif;
+        }
+    }
+    .boxes-icn-panel{
+       width: 27px;
+       height: 27px;
+    }
+    .warning-icn-panel{
+        width: 26px;
+        height: 29px;
+    }
+    .commodity-reports{
+        margin-right: 1em;
+    }
+    .cashier {
+        border-top: 1px solid #e6ebed;
+        border-bottom: 1px solid #e6ebed;
+        padding: 40px 30px;
+        background-color: #f1f5f6;
+        h2 {
+            color: #2e3a40;
+            font-size: 22px;
+            font-weight: 400;
+        }
+        .counters {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 21px;
+        }
+    }
+
+    .reports {
+      padding: 40px 50px;
+      .problem {
+        color: #f53f3f;
+      }
+      .commodity {
+        color: #4ba6f8;
+      }
+    }
+
+}

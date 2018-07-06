@@ -1,0 +1,103 @@
+.branchpage-container{
+    min-height: 100%;
+    padding: 0 30px;
+}
+.map-container{
+    position: relative;
+}
+.back{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+
+.roles, .branch-employees{
+    background-color: $page-bg-color;
+    padding: 40px 15px 40px 30px;
+}
+.branch-employees{
+    padding-top: 0;
+}
+.reports-wrap{
+    background-color: #f1f5f6;
+    padding-top: 25px; 
+}
+.section-analytics-wrap{
+    position: relative;
+    min-height: 220px;
+    overflow: hidden;
+    &.graph{
+        min-height: 550px;
+    } 
+}
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    margin: 0 -10px;
+}
+.analytics{
+    background-image: url('~images/bg-analytics.jpg');
+}
+.graph{
+    background-image: url('~images/avg-income-compare.jpg');
+}
+.section-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 30px; 
+}
+.describe-txt{
+    font-size: 15px;
+    color: #7e8a90;
+    margin-top: 5px;
+}
+.no-transform{
+    text-transform: none;
+}
+.small-btn{
+    width: auto;
+    padding: 0 40px;
+    display: flex;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    line-height: 1;
+    margin-top: 20px;
+    flex-shrink: 0;
+}
+.branchpage-container{
+    /deep/ .section-title{
+        margin-bottom: 20px;
+        padding-right: 15px;
+    }
+    /deep/ .income__wrap{
+        padding: 30px 30px 20px;
+        .income{
+            margin: 0;
+        }
+    }
+    /deep/ .collapse-arrow{
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: all ease 300ms;
+        &.active{
+            transform: rotate(-90deg);  
+        }
+    }
+}

@@ -1,0 +1,3 @@
+parameters:
+  pro_plan_limits:
+    branch_max: 10

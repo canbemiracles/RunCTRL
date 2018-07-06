@@ -1,0 +1,5 @@
+ApiBundle\Entity\User\Group:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true

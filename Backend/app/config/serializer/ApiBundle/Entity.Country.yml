@@ -1,0 +1,19 @@
+ApiBundle\Entity\Country:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    phone_code:
+      expose: true
+    is_state:
+      expose: true
+    workday_start:
+      expose: true
+    date_format:
+      expose: true
+    currency:
+      expose: true
+    country_code:
+      expose: true

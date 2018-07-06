@@ -1,0 +1,22 @@
+.nav{
+    justify-content: flex-start;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+.nav-link{
+    color: $gray;
+    transition: color 300ms ease;
+}
+
+.nav-link:hover{
+    color: $lightgray;
+}
+.reports-count{
+    background-color: $blue;
+    padding: 0 5px;
+    border-radius: 50px;
+    color: $white;
+    font-size: 14px;
+}

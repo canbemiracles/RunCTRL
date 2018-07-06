@@ -1,0 +1,307 @@
+.role-card{
+    margin: 0 1rem 1rem 0;
+    box-shadow: 0 3px 10px rgba(28, 60, 77, 0.1);
+    background-color: #fff;
+    width: calc(16.6667% - 1rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.block-top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-grow: 1;
+    height: 240px;
+    padding-bottom: 20px;
+}
+.avatar{
+    position: relative;
+    margin: 14px 0;
+    height: 140px;
+    width: 140px;
+
+    .black {
+      color: #505d63 !important;
+    }
+}
+.pic-holder{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    &.inActive{
+        opacity: .5;
+    }
+    &.not-stationed{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'Roboto-Light', sans-serif;
+    }
+}
+.role-progress-chart, .wrap-static-circle{
+    height: 132px;
+    width: 132px;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+}
+.wrap-static-circle{
+    border-radius: 50%;
+    border: 2px solid #bac6cc;
+}
+.employee-name{
+    font-size: 16px;
+    color: #505d63;
+    font-family: "Roboto-Medium", sans-serif;
+    text-align: center;
+}
+.employee-post{
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 15px;
+}
+.employee-stationed{
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 15px;
+    color: $cancelRed;
+}
+.task-state{
+    margin-right: 0.5em;
+}
+.amount{
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 15px;
+}
+.working-time{
+    font-family: "Roboto-Medium",sans-serif;
+    font-size: 15px;
+    color: #505d63;
+    position: absolute;
+    top:10px;
+    right: 15px;
+}
+.working-time.over{
+    color: #f83c37;
+}
+.working-time.over-much{
+    color: #fff;
+    background-color: #f83c37;
+    border-radius: 100px;
+    padding: 2px 7px;
+    margin-right: -7px;
+}
+.role-card.over-much{
+    border: 2px solid #f53f3f;
+    box-shadow: 0 3px 10px rgba($cancelRed, .3);
+    &:hover{
+        cursor: default;
+    }
+}
+.block-bottom{
+    display: flex;
+    border-top: 1px solid #ebf0f2;
+    position: relative;
+}
+.state-tasks{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 10px 15px;
+    height: 45px;
+    align-items: center;
+    justify-content: space-between;
+}
+.block-bottom-empty{
+    height: 45px;
+}
+.check-state{
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $blue;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon-check{
+        fill: #fff;
+        width: 15px;
+    }
+    &.not-stationed{
+        background-color: $cancelRed;
+        color: #fff;
+        font-family: 'Roboto-Black', sans-serif;
+    }
+}
+.chart-status{
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    z-index: 15;
+    width: 100%;
+    height: 163px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    .total-count{
+       font-size: 32px;
+       color: $gray;
+       line-height: 1;
+    }
+    .desc{
+        color: #7e8a90;
+        font-size: 15px;
+    }
+}
+.chart{
+    width: 115px;
+}
+.content-right{
+    border-left: 1px solid #ebf0f2;
+    position: absolute;
+    left: 100%;
+    z-index: 15;
+    width: 100%;
+    background-color: #fff;
+    .block-top-right{
+        height: 240px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.shadow-expanded{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 200%;
+    height: calc(100% + 160px);
+    box-shadow: 0 10px 20px  rgba(#1c3c4d, .5);
+    z-index: 15;
+}
+.info-title{
+    color: #7e8a90;
+    font-family: 'Roboto-Medium', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+.info-content{
+    margin-bottom: 20px;
+    &:last-child{
+        margin: 0;
+    }
+}
+.time{
+    padding: 3px 6px;
+    min-width: 75px;
+    font-size: 14px;
+    text-align: center;
+}
+.time-start{
+    background-color: #d3f7c4; 
+    position: relative;
+    margin-right: 1em;
+    &:after{
+        position: absolute;
+        left: 100%;
+        top: 0;
+        content: '-';
+        padding: 3px 5px;
+        font-size: 14px;
+
+    }
+    &.time-late{
+        background-color: #fccfcf;
+    }
+}
+.time-end{
+   color: #627680;
+   background-color: #dcfaff;
+   text-transform: uppercase;
+}
+.time-worked{
+    font-size: 26px;
+    color: $gray;
+    line-height: 0.8;
+    margin-bottom: 10px;
+    font-family: 'Roboto-Light', sans-serif;
+}
+.time-overwork{
+    color: $cancelRed;
+    line-height: 1;
+    font-size: 13px;
+    font-family: 'Roboto-Medium', sans-serif;
+}
+.earned{
+   font-size: 20px;
+   color: $gray;
+   line-height: 1;
+}
+.rate{
+   color: #7e8a90;
+}
+.block-bottom-right{
+    background-color: #fff;
+    height: 209px;
+    overflow: hidden;
+}
+.problems{
+    border-top: 1px solid #ebf0f2;
+    height: 100%;
+    padding: 20px 10px;
+    .info-content{
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        &:after{
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8%;
+            background-image: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);  
+        }   
+    }
+}
+.problems-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.problem-info{
+   background-color:  #ffecec;
+   color: #505d63;
+   padding: 15px 10px;
+   font-family: 'Roboto-Medium', sans-serif;
+   font-size: 15px;
+   line-height: 1;
+   margin-bottom: 5px;
+}

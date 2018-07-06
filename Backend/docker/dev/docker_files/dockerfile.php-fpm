@@ -1,0 +1,21 @@
+FROM php:7.0-fpm
+RUN apt-get update && apt-get install -y \
+        libmcrypt-dev libcurl4-gnutls-dev libxml2-dev zlib1g-dev libpng12-dev libzmq3-dev libicu-dev procps acl cron sendmail\
+        libxrender1 libfontconfig1 libx11-dev libjpeg62 libxtst6 wget \
+        && wget https://github.com/h4cc/wkhtmltopdf-amd64/blob/master/bin/wkhtmltopdf-amd64?raw=true -O /usr/local/bin/wkhtmltopdf \
+        && chmod +x /usr/local/bin/wkhtmltopdf
+RUN pecl install zmq-beta
+RUN docker-php-ext-install \
+mcrypt \
+mysqli \
+pdo \
+pdo_mysql \
+curl \
+xml \
+zip \
+gd
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl
+RUN echo "extension=zmq.so" > /usr/local/etc/php/conf.d/docker-zmq.ini
+#This command fixing CentOS and Amazon Ami cron security issue.
+RUN sed -i '/session    optional     pam_loginuid.so/c\#session    optional     pam_loginuid.so' /etc/pam.d/cron

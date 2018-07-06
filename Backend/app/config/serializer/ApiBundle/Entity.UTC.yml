@@ -1,0 +1,7 @@
+ApiBundle\Entity\UTC:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    value:
+      expose: true

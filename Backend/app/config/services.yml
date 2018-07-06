@@ -1,0 +1,129 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        # automatically injects dependencies in your services
+        autowire: true
+        # automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        # this means you cannot fetch services directly from the container via $container->get()
+        # if you need to do this, you can override this setting on individual services
+        public: false
+
+    # makes classes in src/AppBundle available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    AppBundle\:
+        resource: '../../src/AppBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/AppBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    AppBundle\Controller\:
+        resource: '../../src/AppBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    # add more services, or override services that need manual wiring
+    # AppBundle\Service\ExampleService:
+    #     arguments:
+    #         $someArgument: 'some_value'
+
+    app.request_listener:
+        class: ApiBundle\EventListener\RequestListener
+        arguments:
+            - '@security.token_storage'
+            - '@translator'
+            - '@service.notification_service'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
+
+    # Alerts service
+    app.alerts:
+        class: ApiBundle\Service\AdminPanel\AlertService
+        arguments:
+          - '@doctrine.orm.entity_manager'
+          - '@translator'
+
+    pdo:
+        class: PDO
+        arguments:
+            - 'mysql:host=%database_host%;port=%database_port%;dbname=%database_name%'
+            - '%database_user%'
+            - '%database_password%'
+        calls:
+            - [ setAttribute, [3, 2] ] # \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION
+
+    session.handler.pdo:
+        class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        arguments:
+            - '@pdo'
+            - {lock_mode: 0}
+
+#Sonata Admin
+
+    admin.question_yes_no:
+        class: AssignmentsBundle\Admin\QuestionYesNoAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\QuestionYesNo, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: QuestionYesNo, group: Questions}
+        public: true
+    admin.question_text:
+        class: AssignmentsBundle\Admin\QuestionTextAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\QuestionText, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: QuestionText, group: Questions}
+        public: true
+    admin.question_range:
+        class: AssignmentsBundle\Admin\QuestionRangeAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\QuestionRange, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: QuestionRange, group: Questions}
+        public: true
+    admin.question_numeric:
+        class: AssignmentsBundle\Admin\QuestionNumericAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\QuestionNumeric, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: QuestionNumeric, group: Questions}
+        public: true
+
+    admin.question_answer_list:
+        class: AssignmentsBundle\Admin\QuestionAnswerList
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\AnswerList\QuestionAnswerList, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: QuestionAnswerList, group: Questions}
+        public: true
+
+    admin.checklist:
+        class: AssignmentsBundle\Admin\ChecklistAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Checklist\Checklist, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Checklist, group: Checklist}
+        public: true
+
+    admin.standard_task:
+        class: AssignmentsBundle\Admin\StandardTaskAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\StandardTask, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Standard Task, group: Other Assignments}
+        public: true
+
+#Sonata helpers
+    admin.question_answer_list_possible_answers:
+        class: AssignmentsBundle\Admin\QuestionPossibleAnswerAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Question\AnswerList\QuestionPossibleAnswer, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: 1, group: Questions, show_in_dashboard: false}
+        public: true
+
+    admin.question_checklist_tasks:
+        class: AssignmentsBundle\Admin\TasksAdmin
+        arguments: [~, AssignmentsBundle\Entity\Assignment\Checklist\Tasks, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Tasks, group: Checklist, show_in_dashboard: false }
+        public: true

@@ -1,0 +1,33 @@
+ApiBundle\Entity\Company:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    geographical_area:
+      expose: true
+    week_start_on:
+      expose: true
+    overtime_hourly_rate:
+      expose: true
+    weekend_rate:
+      expose: true
+    weekends:
+      expose: true
+    time_zone:
+      expose: true
+    currency:
+      expose: true
+    plan:
+      expose: true
+    plan_pay:
+      expose: true
+    planPayedUntil:
+      expose: true
+    date_format:
+      expose: true
+    time_format:
+      expose: true
+    subcategory:
+      expose: true

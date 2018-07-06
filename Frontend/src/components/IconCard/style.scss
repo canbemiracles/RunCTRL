@@ -1,0 +1,56 @@
+.assignment-card {
+    border-radius: 2px;
+    background: white;
+    p {
+        margin-top: 80px;
+        color: #03304f;
+        font-size: 14px;
+    }
+    .rectangle {
+        min-height: 123px;
+        border-bottom: 1px solid #f1f5f6;
+        border-right: 1px solid #f1f5f6;
+        cursor: pointer;
+        &:last-child {
+            border-right: none;
+        }
+    }
+    .row:last-child {
+        .rectangle {
+            border-bottom: none;
+        }
+    }
+
+}
+
+.icon {
+    position: absolute;
+    transition: all ease-in .2s;
+    width: 70px;
+    fill: #b0bfc6;
+}
+.item-svg:hover, .selected{
+    .icon{
+        fill: #0ecdee;
+    }
+}
+
+.selected .item-task__desc {
+    opacity: 1;
+}
+.selected:hover .item-task__desc {
+    opacity: 1;
+}
+
+.item-task__desc {
+    color: #000;
+    font-size: 14px;
+    position: absolute;
+    bottom: 13px;
+    opacity: 0;
+}
+.item-svg:hover{
+    .item-task__desc {
+        opacity: 0.4;
+    } 
+}

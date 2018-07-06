@@ -1,0 +1,53 @@
+.counter{
+	justify-content: space-between;
+}
+.counterBut {
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	color: #98a7ad;
+	font-size: 12px;
+	transition: color ease 300ms;
+	&:hover, &:focus{
+		color: $gray;
+	}
+}
+#app  .input-wrap{
+	border-bottom: 1px solid #ccc;
+	flex-grow: 1;
+	justify-content: center;
+	&.field-error{
+		border: none;
+		border-bottom: 1px solid $cancelRed;
+	}
+}
+.fieldCount {
+	width: 1.2em;
+	padding: 0 5px;
+	min-width: 1.2em;
+	flex-shrink: 0;
+	text-align: center;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	color: #505d63;
+}
+.input-buffer{
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    visibility: hidden;
+    white-space: nowrap;
+}
+.counter-units{
+	font-size: 18px;
+	color: #505d63;
+}
+.arrow-right {
+	background-color: #98a7ad;
+}
+.arrow-left {
+	border: 10px solid transparent;
+	border-right: 10px solid #98a7ad;
+}

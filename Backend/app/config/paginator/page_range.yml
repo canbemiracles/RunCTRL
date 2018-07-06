@@ -1,0 +1,10 @@
+parameters:
+  page_range:
+    employees_per_page: 17
+    cashier_reports_per_page: 10
+    commodity_reports_per_page: 10
+    problem_reports_per_page: 10
+    end_of_shift_reports_per_page: 10
+    history_roles_per_page: 10
+    notifications_per_page: 10
+    history_card_payment: 10

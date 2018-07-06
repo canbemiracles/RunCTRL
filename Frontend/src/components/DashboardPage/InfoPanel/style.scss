@@ -1,0 +1,126 @@
+.info-panel__wrap {
+  padding: 40px 25px 40px 55px;
+
+  background-color: #fff;
+}
+
+.info-panel__wrap ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.item-info {
+  margin-right: 70px;
+  padding-right: 70px;
+
+  border-right: 1px dashed #c1ccd0;
+}
+
+.item-info:last-child {
+  margin-right: 0;
+  padding-right: 0;
+
+  border-right: none;
+}
+
+
+.item-info-title {
+  color: #627680;
+  font-size: 16px;
+}
+
+.info-panel-num {
+  margin-right: 40px;
+  font-family: 'Roboto-Light';
+
+  color: #2e3a40;
+  font-size: 40px;
+}
+
+.wrap-finance span {
+  display: block;
+
+  font-size: 15px;
+  color: #7e8a90;
+
+  text-align: center;
+}
+
+.info-desc__logged-in {
+  color: #7e8a90;
+  font-size: 15px;
+}
+.info-desc__logged-in span {
+  font-family: 'Roboto-Bold';
+  color: #f53f3f;
+}
+
+.info-desc__new-reports li {
+  padding: 0 10px;
+  border-right: 1px solid #dbe2e5;
+}
+.info-desc__new-reports li:first-child {
+  padding-left: 0;
+}
+.info-desc__new-reports li:last-child {
+  border-right: none;
+}
+
+.info-desc__new-reports span {
+  margin-left: 1px;
+}
+
+.icn-panel {
+  margin-bottom: -3px;
+  margin-right: 10px;
+  margin-left: -30px;
+
+  fill: #0ecdee;
+}
+.boxes-icn-panel {
+  margin-bottom: -1px;
+}
+.dollar-icn-panel {
+  margin-bottom: -2px;
+}
+.warning-icn-panel {
+  margin-bottom: -2px;
+}
+
+.group-icn-panel {
+  width: 22px;
+  height: 20px;
+}
+.reports-icn-panel {
+  width: 18px;
+  height: 21px;
+}
+.calculator-icn-panel {
+  width: 19px;
+  height: 21px;
+}
+.boxes-icn-panel {
+  width: 15px;
+  height: 15px;
+}
+.dollar-icn-panel {
+  width: 18px;
+  height: 18px;
+
+  fill: #b062ea;
+}
+.warning-icn-panel {
+  width: 14px;
+  height: 17px;
+}
+.end-icn-panel {
+  width: 20px;
+  height: 12px;
+}
+.currency-icon{
+  color: #9C27B0;
+  font-weight: 500;
+  font-size: 16px;
+}

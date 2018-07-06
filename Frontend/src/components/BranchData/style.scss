@@ -1,0 +1,29 @@
+.main-wrap__branch-data {
+  padding: 25px;
+  background-color: #f1f5f6;
+  height: 100%;
+  h2 {
+  	text-align: center;
+  	color: #03304f;
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 30px;
+  }
+  .back {
+  	position: absolute;
+  }
+}
+
+.wrap-branch-data {
+  width: 100%;
+  background-color: #fff;
+}
+.close{
+  margin-left: auto;
+}
+
+.plus {
+  position: absolute;
+  right: 37px;
+  top: 115px;
+}

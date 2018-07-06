@@ -1,0 +1,10 @@
+AssignmentsBundle\Entity\Notification\DeviceNotificationStation:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+  virtual_properties:
+    getStartTimeTimeZone:
+      serialized_name: start_time_t
+    getEndTimeTimeZone:
+      serialized_name: end_time_t

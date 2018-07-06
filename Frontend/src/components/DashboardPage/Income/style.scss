@@ -1,0 +1,140 @@
+.income__wrap {
+  background-color: #ebf0f2;
+}
+
+.income {
+  height: 400px;
+  margin: 30px;
+  background-color: #fff;
+
+  position: relative;
+
+  &__date-wrap {
+    margin-right: 30px;
+  }
+
+  &__title {
+    margin: 0 0 30px 30px;
+
+    color: #2e3a40;
+    font-size: 22px;
+  }
+
+  &__date {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__date-item {
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px 10px;
+
+    color: #627680;
+    font-size: 15px;
+
+    border: 1px solid #d1d9de;
+    border-radius: 2px;
+
+    background-color: #fff;
+
+    &:hover {
+      background-color: #0ecdee;
+      color: #fff;
+    }
+  }
+
+  &__date-active {
+    background-color: #0ecdee;
+    color: #fff;
+
+    position: relative;
+
+    &::after {
+      width: 10px;
+      content: '';
+
+      margin: auto;
+
+      border: 7px solid transparent;
+      border-top: 7px solid #0ecdee;
+
+      position: absolute;
+      bottom: -14px;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  &__block {
+    overflow-x: hidden;
+    width: 300px;
+    height: 340px;
+    margin: 30px 30px 30px 0;
+  }
+
+  &__block-cont {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  &__block-item {
+    margin-bottom: 7px;
+    padding-left: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    font-size: 15px;
+    color: #505d63;
+
+    position: relative;
+
+    &:before {
+      display: block;
+      width: 15px;
+      height: 15px;
+      content: '';
+
+      margin: auto;
+
+      border: 3px solid #8fb4c7;
+      border-radius: 50%;
+
+      position: absolute;
+      top: -1px;
+      bottom: 0;
+      left: 10px;
+    }
+
+    &:hover {
+      background-color: #ecf4f6;
+    }
+    &:hover:before {
+      border-color: #0ecdee;
+    }
+  }
+}
+
+.income__wrap__title {
+  margin-top: 30px;
+}
+
+.income__wrap-graf {
+  width: 85%;
+}
+
+.no__data {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
+}
+
+.income__graf {
+  overflow: hidden;
+}

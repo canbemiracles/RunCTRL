@@ -1,0 +1,11 @@
+ApiBundle\Entity\EmergencyPhone:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    phone_number:
+      expose: true
+    country:
+      expose: true
+    type:
+      expose: true

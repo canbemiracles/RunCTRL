@@ -1,0 +1,7 @@
+AssignmentsBundle\Entity\Assignment\Question\AnswerList\QuestionPossibleAnswer:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    answer:
+      expose: true

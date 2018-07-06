@@ -1,0 +1,27 @@
+AssignmentsBundle\Entity\Notification\DeviceNotification:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    title:
+      expose: true
+    description:
+      expose: true
+    view_time:
+      expose: true
+    start_time:
+      expose: true
+    end_time:
+      expose: true
+    repeat_unit:
+      expose: true
+    repeat_subunit:
+      expose: true
+    repeat_week_days:
+      expose: true
+    repeat_month_days:
+      expose: true
+    repeat_months:
+      expose: true
+    repeat_week:
+      expose: true

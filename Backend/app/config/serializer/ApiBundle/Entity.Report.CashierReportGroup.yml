@@ -1,0 +1,7 @@
+ApiBundle\Entity\Report\CashierReportGroup:
+  exclusion_policy: ALL
+  properties:
+    group_report:
+      expose: true
+    cashier_report:
+      expose: true

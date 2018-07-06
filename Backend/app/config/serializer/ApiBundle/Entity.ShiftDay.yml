@@ -1,0 +1,13 @@
+ApiBundle\Entity\ShiftDay:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    time_open:
+      expose: true
+    time_close:
+      expose: true
+    day:
+      expose: true
+    shift_day:
+      expose: true

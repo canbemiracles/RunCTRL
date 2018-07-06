@@ -1,0 +1,9 @@
+FOS\UserBundle\Model\Group:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+        roles:
+            expose: true

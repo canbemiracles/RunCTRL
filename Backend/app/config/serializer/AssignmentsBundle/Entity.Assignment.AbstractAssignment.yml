@@ -1,0 +1,50 @@
+AssignmentsBundle\Entity\Assignment\AbstractAssignment:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    role:
+      expose: true
+    priority:
+      expose: true
+    importance:
+      expose: true
+    start_time:
+      expose: true
+    end_time:
+      expose: true
+    repeat_unit:
+      expose: true
+    repeat_subunit:
+      expose: true
+    snooze_count:
+      expose: true
+    snooze_time:
+      expose: true
+    snooze_until:
+      expose: true
+    snooze_max:
+      expose: true
+    title:
+      expose: true
+    view_time:
+      expose: true
+    last_sent_date:
+      expose: true
+    answers:
+      expose: true
+    repeat_week_days:
+      expose: true
+    repeat_month_days:
+      expose: true
+    repeat_months:
+      expose: true
+    repeat_week:
+      expose: true
+  virtual_properties:
+    getStartTimeTimeZone:
+      serialized_name: start_time_t
+    getEndTimeTimeZone:
+      serialized_name: end_time_t
+    getSnoozeUntilTimeZone:
+      serialized_name: snooze_until_t

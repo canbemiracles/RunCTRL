@@ -1,0 +1,11 @@
+WebSocketsBundle\Entity\Notification\ReportNotification:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    type:
+      expose: true
+    report:
+      expose: true
+    user:
+      expose: true

@@ -1,0 +1,21 @@
+AssignmentsBundle\Entity\Assignment\StandardTask:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    title:
+      expose: true
+    description:
+      expose: true
+    role:
+      expose: true
+    snooze_count:
+      expose: true
+    snooze_until:
+      expose: true
+    working:
+      expose: true
+    has_confirmation:
+      expose: true
+    time_confirmation:
+      expose: true

@@ -1,0 +1,5 @@
+AssignmentsBundle\Entity\Assignment\Question\QuestionNumeric:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true

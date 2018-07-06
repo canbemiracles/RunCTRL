@@ -1,0 +1,39 @@
+
+.wrap {
+  background: #f1f5f6;
+}
+
+nav {
+  padding: 0 30px;
+  font-size: 15px;
+  width: 100%;
+
+  svg {
+    margin-bottom: -4px;
+    margin-right: 5px;
+    width: 15px;
+    fill: #505d63;
+  }
+
+  a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    color: #505d63;
+
+    &:hover {
+      text-decoration: none;
+      opacity: .7;
+    }
+  }
+}
+
+.worked_time {
+  margin: 30px auto;
+
+  .chart_tabs {
+    position: absolute;
+    top: 30px;
+    right: 27px;
+  }
+}

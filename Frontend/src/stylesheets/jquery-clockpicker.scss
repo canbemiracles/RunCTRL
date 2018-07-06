@@ -1,0 +1,314 @@
+@import 'variables';
+/*!
+ * ClockPicker v0.0.7 for jQuery (http://weareoutman.github.io/clockpicker/)
+ * Copyright 2014 Wang Shenwei.
+ * Licensed under MIT (https://github.com/weareoutman/clockpicker/blob/gh-pages/LICENSE)
+ * 
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/* Picked from bootstrap: .popover, .btn, .text-primary */
+
+.popover.clockpicker-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 276px;
+  margin: 0;
+  z-index: 1010;
+  display: none;
+  padding: 1px;
+  text-align: left;
+  white-space: normal;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.popover.clockpicker-popover .top {
+	margin-top: -10px;
+}
+.popover.clockpicker-popover .right {
+	margin-left: 10px;
+}
+.popover.clockpicker-popover .bottom {
+	margin-top: 10px;
+}
+.popover.clockpicker-popover .left {
+	margin-left: -10px;
+}
+.popover.clockpicker-popover  {
+	.popover-content {
+		padding: 9px 14px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	  }
+	  & > .arrow,
+	  & > .arrow:after {
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+		/* The following are set in WordPress (wp-admin/css/revisions.css) - reset them to initial values */
+		overflow:visible;
+		margin:0;
+		padding:0;
+		z-index:auto;
+		background-color:transparent;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+		bottom:auto;
+		left:auto;
+		right:auto;
+		top:auto;
+		-webkit-transform:none;
+		-ms-transform:none;
+		transform:none;
+	  }
+	  & > .arrow {
+		border-width: 11px;
+	  }
+	  & > .arrow:after {
+		content: "";
+		border-width: 10px;
+	  }
+	  &.top > .arrow {
+		bottom: -11px;
+		left: 50%;
+		margin-left: -11px;
+		border-top-color: #999;
+		border-top-color: rgba(0, 0, 0, .25);
+		border-bottom-width: 0;
+	  }
+	  &.top > .arrow:after {
+		bottom: 1px;
+		margin-left: -10px;
+		content: " ";
+		border-top-color: #f4fbfc;
+		border-bottom-width: 0;
+	  }
+	  &.right > .arrow {
+		top: 50%;
+		left: -11px;
+		margin-top: -11px;
+		border-right-color: #999;
+		border-right-color: rgba(0, 0, 0, .25);
+		border-left-width: 0;
+	  }
+	  &.right > .arrow:after {
+		bottom: -10px;
+		left: 1px;
+		content: " ";
+		border-right-color: #f4fbfc;
+		border-left-width: 0;
+	  }
+	  &.bottom > .arrow {
+		top: -11px;
+		left: 50%;
+		margin-left: -11px;
+		border-top-width: 0;
+		border-bottom-color: #999;
+		border-bottom-color: rgba(0, 0, 0, .25);
+	  }
+	  &.bottom > .arrow:after {
+		top: 1px;
+		margin-left: -10px;
+		content: " ";
+		border-top-width: 0;
+		border-bottom-color: #f4fbfc;
+	  }
+	  &.left > .arrow {
+		top: 50%;
+		right: -11px;
+		margin-top: -11px;
+		border-right-width: 0;
+		border-left-color: #999;
+		border-left-color: rgba(0, 0, 0, .25);
+	  }
+	  &.left > .arrow:after {
+		right: 1px;
+		bottom: -10px;
+		content: " ";
+		border-right-width: 0;
+		border-left-color: #f4fbfc;
+	  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.text-primary {
+  color: $blue;
+}
+
+/*!
+ * ClockPicker v{package.version} for Bootstrap (http://weareoutman.github.io/clockpicker/)
+ * Copyright 2014 Wang Shenwei.
+ * Licensed under MIT (https://github.com/weareoutman/clockpicker/blob/gh-pages/LICENSE)
+ */
+ 
+.clockpicker .input-group-addon {
+	cursor: pointer;
+}
+.clockpicker-moving {
+	cursor: move;
+}
+.popover{
+	&.clockpicker-align-left.popover > .arrow {
+		left: 25px;
+	}
+	&.clockpicker-align-top.popover > .arrow {
+		top: 17px;
+	}
+	&.clockpicker-align-right.popover > .arrow {
+		left: auto;
+		right: 25px;
+	}
+	&.clockpicker-align-bottom.popover > .arrow {
+		top: auto;
+		bottom: 6px;
+	}
+	&.clockpicker-popover .popover-title span {
+		cursor: pointer;
+	}
+	&.clockpicker-popover .popover-content {
+		background-color: #f4fbfc;
+		padding: 10px;
+	} 
+}
+
+
+.clockpicker-plate {
+	background-color: #fff;
+	border-radius: 50%;
+	width: 196px;
+	height: 196px;
+	overflow: visible;
+	position: relative;
+	/* Disable text selection highlighting. Thanks to Hermanya */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.clockpicker-canvas,
+.clockpicker-dial {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+}
+.clockpicker-minutes {
+	visibility: hidden;
+}
+.clockpicker-tick {
+	border-radius: 50%;
+	color: #000;
+	line-height: 26px;
+	text-align: center;
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 1000;
+}
+.clockpicker-tick.active,
+.clockpicker-tick:hover {
+	background-color:#0fd5f7;
+	color: #fff;
+}
+.clockpicker-button {
+	background-image: none;
+	background-color: #fff;
+	border-width: 1px 0 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	margin: 0;
+	padding: 10px 0;
+}
+.clockpicker-button:hover {
+	background-image: none;
+	background-color: #ebebeb;
+}
+.clockpicker-button:focus {
+	outline: none!important;
+}
+.clockpicker-dial {
+	-webkit-transition: -webkit-transform 350ms, opacity 350ms;
+	-moz-transition: -moz-transform 350ms, opacity 350ms;
+	-ms-transition: -ms-transform 350ms, opacity 350ms;
+	-o-transition: -o-transform 350ms, opacity 350ms;
+	transition: transform 350ms, opacity 350ms;
+}
+.clockpicker-dial-out {
+	opacity: 0;
+}
+.clockpicker-hours.clockpicker-dial-out {
+	-webkit-transform: scale(1.2, 1.2);
+	-moz-transform: scale(1.2, 1.2);
+	-ms-transform: scale(1.2, 1.2);
+	-o-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
+}
+.clockpicker-minutes.clockpicker-dial-out {
+	-webkit-transform: scale(.8, .8);
+	-moz-transform: scale(.8, .8);
+	-ms-transform: scale(.8, .8);
+	-o-transform: scale(.8, .8);
+	transform: scale(.8, .8);
+}
+.clockpicker-canvas {
+	-webkit-transition: opacity 175ms;
+	-moz-transition: opacity 175ms;
+	-ms-transition: opacity 175ms;
+	-o-transition: opacity 175ms;
+	transition: opacity 175ms;
+}
+.clockpicker-canvas-out {
+	opacity: 0.25;
+}
+.clockpicker-canvas-bearing,
+.clockpicker-canvas-fg {
+	stroke: none;
+	fill: #0fd5f7;
+}
+.clockpicker-canvas-bg {
+	stroke: none;
+	fill: #0fd5f7;
+}
+
+.clockpicker-canvas-bg-trans {
+	fill: rgba($blue, .25);
+}
+.clockpicker-canvas line {
+	stroke: #0fd5f7;
+	stroke-width: 1;
+	stroke-linecap: round;
+	/*shape-rendering: crispEdges;*/
+}
+.clockpicker-button.am-button {
+	margin: 1px;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 4px;
+	
+}
+.clockpicker-button.pm-button {
+	margin: 1px 1px 1px 136px;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 4px;
+}

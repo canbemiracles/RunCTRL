@@ -1,0 +1,12 @@
+notification_topic:
+    channel: notifications
+    handler:
+        callback: 'notification.topic'
+
+search_rpc:
+    channel: search/{method}
+    handler:
+        callback: 'search.rpc'
+    requirements:
+        method:
+            pattern: "search"

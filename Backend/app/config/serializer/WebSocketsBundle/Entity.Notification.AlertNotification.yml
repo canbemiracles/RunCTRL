@@ -1,0 +1,13 @@
+WebSocketsBundle\Entity\Notification\AlertNotification:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    title:
+      expose: true
+    description:
+      expose: true
+    user:
+      expose: true
+    ip:
+      expose: true

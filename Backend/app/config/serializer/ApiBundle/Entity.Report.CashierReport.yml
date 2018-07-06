@@ -1,0 +1,15 @@
+ApiBundle\Entity\Report\CashierReport:
+  exclusion_policy: ALL
+  properties:
+    payment_method:
+      expose: true
+    amount:
+      expose: true
+    currency:
+      expose: true
+
+  virtual_properties:
+        getBranchId:
+          serialized_name: branch_id
+        getBranchStationId:
+          serialized_name: branch_station_id

@@ -1,0 +1,95 @@
+h2 {
+  color: #2e3a40;
+  font-size: 26px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+h3 {
+  color: #2f3b40;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+h5 {
+  color: #505d63;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 15px;
+}
+
+.card-wrapper {
+  padding: 0;
+}
+
+.b-card {
+  margin-left: 15px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 3px 10px rgba(28, 60, 77, 0.1);
+  border-radius: 2px;
+}
+
+.mark {
+  padding: 4px 15px;
+  min-width: 109px;
+  text-align: center;
+  border-radius: 100px;
+  background-color: #0bcdee;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.icon {
+  height: 65px;
+  margin-bottom: 12px;
+}
+
+.table-icon {
+  height: 15px;
+  width: 30px;
+}
+
+.promocode {
+  display: flex;
+  input {
+    height: 45px;
+    border-radius: 2px;
+    border: 1px solid #ccd7dd;
+    min-width: 316px;
+    padding: 13px 15px;
+    margin-right: 16px;
+  }
+  p {
+    color: #7e8a90;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+}
+
+.edit-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.controls {
+
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  color: #19a5e8;
+  font-weight: 400;
+  line-height: 19px;
+}

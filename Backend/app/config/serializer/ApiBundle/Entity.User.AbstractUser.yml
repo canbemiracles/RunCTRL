@@ -1,0 +1,32 @@
+ApiBundle\Entity\User\AbstractUser:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    login:
+      expose: true
+    first_name:
+      expose: true
+    last_name:
+      expose: true
+    phone_number:
+      expose: true
+    groups:
+      expose: true
+    avatar:
+      expose: true
+    locale:
+      expose: true
+    newsletter_notification_alert:
+      expose: true
+    newsletter_notification_announcement:
+      expose: true
+    newsletter_notification_report:
+      expose: true
+  virtual_properties:
+        getCompanyId:
+          serialized_name: company_id
+        is2FA:
+          serialized_name: 2fa
+        isEnabled:
+          serialized_name: confirmed

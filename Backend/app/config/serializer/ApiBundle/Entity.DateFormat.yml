@@ -1,0 +1,7 @@
+ApiBundle\Entity\DateFormat:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    date_format:
+      expose: true

@@ -1,0 +1,59 @@
+assignments_question_yes_no:
+    resource: "@AssignmentsBundle/Controller/Assignment/Question/QuestionYesNoController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_question_text:
+    resource: "@AssignmentsBundle/Controller/Assignment/Question/QuestionTextController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_question_numeric:
+    resource: "@AssignmentsBundle/Controller/Assignment/Question/QuestionNumericController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_question_range:
+    resource: "@AssignmentsBundle/Controller/Assignment/Question/QuestionRangeController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_question_answer_list:
+    resource: "@AssignmentsBundle/Controller/Assignment/Question/AnswerList/QuestionAnswerListController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_checklist:
+    resource: "@AssignmentsBundle/Controller/Assignment/Checklist/ChecklistController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+assignments_standard_task:
+    resource: "@AssignmentsBundle/Controller/Assignment/StandardTaskController.php"
+    type:     annotation
+    prefix: 'api/v1/'
+
+assignments_device_notification_message:
+    resource: "@AssignmentsBundle/Controller/Notification/DeviceNotificationMessageController.php"
+    type:     annotation
+    prefix: 'api/v1/'
+
+assignments_device_notification_role:
+    resource: "@AssignmentsBundle/Controller/Notification/DeviceNotificationRoleController.php"
+    type:     annotation
+    prefix: 'api/v1/'
+
+assignments_device_notification_station:
+    resource: "@AssignmentsBundle/Controller/Notification/DeviceNotificationStationController.php"
+    type:     annotation
+    prefix: 'api/v1/'
+
+assignments_device_notification_branch:
+    resource: "@AssignmentsBundle/Controller/Notification/DeviceNotificationBranchController.php"
+    type:     annotation
+    prefix: 'api/v1/'
+
+assignments:
+    resource: "@AssignmentsBundle/Controller/Assignment/AssignmentController.php"
+    type:     annotation
+    prefix: 'api/v1/'

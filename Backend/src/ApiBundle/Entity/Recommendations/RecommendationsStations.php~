@@ -1,0 +1,50 @@
+<?php
+
+namespace ApiBundle\Entity\Recommendations;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RecommendationsStations
+ *
+ * @ORM\Table(name="recommendations_stations")
+ * @ORM\Entity(repositoryClass="ApiBundle\Repository\Recommendations\RecommendationsStationsRepository")
+ */
+class RecommendationsStations
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=80)
+     */
+    protected $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ApiBundle\Entity\Subcategory")
+     * @ORM\JoinColumn(name="subcategory_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    protected $subcategory;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ApiBundle\Entity\Recommendations\RecommendationsRoles", mappedBy="recommendations_station")
+     */
+    protected $recommendations_roles;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

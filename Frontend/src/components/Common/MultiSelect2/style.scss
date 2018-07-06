@@ -1,0 +1,112 @@
+.select{
+    width: auto;
+    display: flex;
+}
+.active-select{
+    margin-left: auto;
+    position: relative;
+    z-index: 50;
+}
+.select-options{
+    top: calc(100% + 5px);
+    left: auto;
+    right: -18px;
+    border-color: #ccd7dd8c;
+}
+.role-icon{
+    width: 30px;
+    height: 30px;
+    background-color: $cancelRed;
+    border-radius: 50%;
+    align-self: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; 
+  }
+.check-icon{
+    width: 20px;
+    height: auto;
+    fill: #fff;
+}
+.no-data{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    &.right{
+        left: auto;
+        right: 40px;
+        justify-content: flex-end;
+    }
+    &.left{
+        left: 40px;
+        right: auto;
+        justify-content: flex-start;
+    }
+}
+.no-data .no-data-inner{
+    transition: transform ease 300ms;
+    &.active{
+        transform: translateX(0%);
+    }
+}
+.no-data.right .no-data-inner{
+    transform: translateX(105%);
+}
+.no-data.left .no-data-inner{
+    transform: translateX(-105%);
+}
+.no-data.right .no-data-inner,
+.no-data.left .no-data-inner,
+{
+    transition: transform ease 300ms;
+    &.active{
+        transform: translateX(0%);
+    }
+}
+.select-options{
+    .arrow,
+    .arrow:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        /* The following are set in WordPress (wp-admin/css/revisions.css) - reset them to initial values */
+        overflow:visible;
+        margin:0;
+        padding:0;
+        z-index: 150;
+        background-color:transparent;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        bottom:auto;
+        left:auto;
+        right:auto;
+        bottom: 6px;
+        border-width: 10px;
+        -webkit-transform:none;
+        -ms-transform:none;
+        transform:none;
+        top: 1px;
+		margin-left: -10px;
+		content: " ";
+		border-top-width: 0;
+		border-bottom-color: #fff;
+    }
+    .arrow {
+        top: -11px;
+		right: 25px;
+        margin-left: -11px;
+        border-width: 11px;
+		border-top-width: 0;
+		border-bottom-color: #999;
+		border-bottom-color: rgba(0, 0, 0, .25);
+    }
+}
+  

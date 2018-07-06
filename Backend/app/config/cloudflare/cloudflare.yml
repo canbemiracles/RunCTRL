@@ -1,0 +1,3 @@
+parameters:
+   cloudflare.api_email: go@runctrl.com
+   cloudflare.api_key: 7c03fedb2ea7592907fc1260782eef69a6182

@@ -1,0 +1,178 @@
+device_not_allowed:
+  see:
+    these:
+      reports: This device is not allowed to see these reports
+      roles: This device is not allowed to see these roles
+    this:
+      report: This device is not allowed to see this report
+      branch: This device is not allowed to see this branch
+      company: This device is not allowed to see this company
+  create:
+    report: This device is not allowed to create reports in this branch station
+
+you_not_allowed:
+  see:
+    these:
+      reports: You are not allowed to see these reports
+      shifts: You are not allowed to see these shifts
+      stations: You are not allowed to see these stations
+      roles: You are not allowed to see these roles
+      employees: You are not allowed to see these employees
+      assignments: You are not allowed to see these assignments
+      history_records: You are not allowed to see these records
+      notifications: You are not allowed to see these notifications
+      recommendations_station: You are not allowed to see these recommendations for stations
+      recommendations_role: You are not allowed to see these recommendations for roles
+      custom_notifications: You are not allowed to see these custom notifications
+      admins: You are not allowed to see these admins
+      branch_managers: You are not allowed to see these branch managers
+      co_managers: You are not allowed to see these managers
+      office_employees: You are not allowed to see these office employees
+      supervisors: You are not allowed to see these supervisors
+    this:
+      report: You are not allowed to see this report
+      admin: You are not allowed to see this admin
+      branch: You are not allowed to see this branch
+      shift: You are not allowed to see this shift
+      station: You are not allowed to see this station
+      role: You are not allowed to see this role
+      company: You are not allowed to see this company
+      employee: You are not allowed to see this employee
+      assignment: You are not allowed to see this assignment
+      emergency_phone: You are not allowed to see this emergency_phone
+      notification: You are not allowed to see this notification
+      device_notification: You are not allowed to see this device notifications
+      subcategory: You are not allowed to see this subcategory
+      qr_code: You are not allowed to see this qr code
+      this: You are not allowed to see this
+      card: You are not allowed to see card
+      recommendations_station: You are not allowed to see this recommendation for station
+      recommendations_role: You are not allowed to see this recommendation for role
+      custom_notifications: You are not allowed to see this custom notification
+      branch_manager: You are not allowed to see this branch manager
+      co_manager: You are not allowed to see this manager
+      office_employee: You are not allowed to see this office employee
+      supervisor: You are not allowed to see this supervisor
+  create:
+    report: You are not allowed to create a new report
+    shift: You are not allowed to create a new shift
+    station: You are not allowed to create a new station
+    more_station: You subscription doesn't allowed to create more station for this branch
+    role: You are not allowed to create a new role
+    employee: You are not allowed to create a new employee
+    assignment: You are not allowed to create a new assignment
+    more_assignment: You subscription doesn't allowed to create more assignments
+    notification: You are not allowed to create a new notification
+    device_notification: You are not allowed to create a device notification
+    branch: You subscription doesn't allowed to create more branches.
+    recommendations_station: You are not allowed to create a recommendation for station.
+    recommendations_role: You are not allowed to create a recommendation for role.
+    custom_notifications: You are not allowed to create a custom notification.
+    branch_manager: You are not allowed to create a branch manager.
+    co_manager: You are not allowed to create a manager.
+    device: You are not allowed to create a device.
+    office_employee: You are not allowed to create a office employee.
+    supervisor: You are not allowed to create a supervisor.
+  edit:
+    report: You are not allowed to edit this report
+    admin: You are not allowed to edit this admin
+    branch: You are not allowed to edit this branch
+    shift: You are not allowed to edit this shift
+    station: You are not allowed to edit this station
+    role: You are not allowed to edit this role
+    company: You are not allowed to edit this company
+    employee: You are not allowed to edit this employee
+    assignment: You are not allowed to edit this assignment
+    emergency_phone: You are not allowed to edit this emergency_phone
+    notification: You are not allowed to edit this notification
+    subcategory: You are not allowed to edit this subcategory
+    card: You are not allowed to edit this card
+    recommendations_station: You are not allowed to edit this recommendation for station.
+    recommendations_role: You are not allowed to edit this recommendation for role.
+    custom_notifications: You are not allowed to edit this custom notification.
+    branch_manager: You are not allowed to edit this branch manager.
+    co_manager: You are not allowed to edit this manager.
+    office_employee: You are not allowed to edit this office employee.
+    supervisor: You are not allowed to edit this supervisor.
+  delete:
+    report: You are not allowed to delete this report
+    branch: You are not allowed to delete this branch
+    shift: You are not allowed to delete this shift
+    station: You are not allowed to delete this station
+    role: You are not allowed to delete this role
+    company: You are not allowed to delete this company
+    employee: You are not allowed to delete this employee
+    assignment: You are not allowed to delete this assignment
+    emergency_phone: You are not allowed to delete this emergency_phone
+    notification: You are not allowed to delete this notification
+    subcategory: You are not allowed to delete this subcategory
+    card: You are not allowed to delete this card
+    recommendations_station: You are not allowed to delete this recommendation for station.
+    recommendations_role: You are not allowed to delete this recommendation for role.
+    custom_notifications: You are not allowed to delete this custom notification
+    branch_manager: You are not allowed to delete this branch manager
+    co_manager: You are not allowed to delete this manager
+    device: You are not allowed to delete this device
+    office_employee: You are not allowed to delete this office employee
+    supervisor: You are not allowed to delete this supervisor
+  generate:
+    report: You are not allowed to generate this report
+    pin: You are not allowed to generate pin code
+  change_avatar: You are not allowed to change avatar of this user
+
+record_not_found: Record not found!
+user_not_found: User not found!
+subscription_has_expired: Your subscription has expired
+branch_not_exists: Branch not exists
+not_found_email: Email not found!
+not_email: Mail not specified
+email_already_verified: Email already verified
+
+shift_management:
+  shift_day_not_found: ShiftDay not found
+  shifts_not_found: Shifts not found
+  shift_not_found: Shift not found
+  branch_not_found: Branch not found
+  station_not_found: The BranchStation not exists
+  not_allowed_open_shift: You are not allowed to open shift by employee
+  not_allowed_close_shift: You are not allowed to close shift
+  employee_not_found: The Employee not exists
+  role_not_found: The Role not exists
+  employee_not_tied: Employee is not tied to a branch
+  employee_not_tied_company: Employee is not tied to a company
+  employee_not_tied_shift: Employee is not tied to a shift
+  role_not_tied: Role is not tied to a branch_station
+  login_failed: login failed
+  not_open: At the moment, the shift is not open
+  already_authorized: This employee is already authorized in the system
+  already_taken_role: This role is already taken
+  employee_not_found_in_history: The Employee not exists in the HistoryEmployee
+  accepted_assignments: You accepted the assignments of the previous employee
+  platform_notify: The platform was notify the branch manager so he will be aware of the problem
+  shift_not_tied_branch: This shift is not tied to the current branch
+  shift_not_tied_day: This shift is not tied to the current day
+  employee_not_tied_branch: This employee is not tied to the current branch
+  has_not_completed_tasks: There are still assignments left for role. It cannot logout without Branch Manager approval
+  no_open_shift: No open shift
+
+device:
+  code_not_found: Device code not found in database
+  not_found: Device not found in database
+
+group:
+  group_not_found: Group not found in database
+
+assignments:
+  already_answered: You already answered this assignments today. You can't snooze it.
+  reached_maximum_snoozes: You reached maximum amount of snoozes. This accident reported in Problem Report.
+  checklist_fully_answered: This checklist is already fully answered.
+  already_done: This task is already done
+  already_working: Employee is already working on this task.
+  task_time_out: You can't work on this task. Your time is out.
+  cat_not_answer_more_one_time: You can't answer this assignment more then 1 time.
+  cat_not_answer_time_out: You can't answer this assignment. Your time is out.
+  answer_not_belong: This answer is not belong to assignment.
+
+social_number_error: The employee with such social number already exists in this company
+card_number_error: The card with such number already exists in this company
+branch_shift_error: The shift with such a gap already exists

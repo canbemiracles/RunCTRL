@@ -1,0 +1,17 @@
+ApiBundle\Entity\TimeZone:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    time_zone:
+      expose: true
+    offset:
+      expose: true
+    abbr:
+      expose: true
+    isdst:
+      expose: true
+    text:
+      expose: true
+    utc:
+      expose: true

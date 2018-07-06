@@ -1,0 +1,9 @@
+WebSocketsBundle\Entity\Notification\AbstractNotification:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    created:
+      expose: true
+    read:
+      expose: true

@@ -1,0 +1,141 @@
+services:
+
+# Assignment Manager
+    service.assignments.manager:
+        class: AssignmentsBundle\Service\Manager\AssignmentManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@redjan_ym_fcm.client'
+            - '@jms_serializer'
+            - '@security.token_storage'
+            - '@service.assignments.assignment_handler'
+            - '@translator'
+            - '@rms_push_notifications'
+
+# Device Notification Manager
+    service.device.notifications.manager:
+        class: AssignmentsBundle\Service\Manager\DeviceNotificationManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@redjan_ym_fcm.client'
+            - '@jms_serializer'
+            - '@rms_push_notifications'
+
+# Question Yes|No Handler
+    service.assignments.question_yes_no_handler:
+        class: AssignmentsBundle\Service\Question\QuestionYesNoHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Question Text Handler
+    service.assignments.question_text_handler:
+        class: AssignmentsBundle\Service\Question\QuestionTextHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Question Range Handler
+    service.assignments.question_range_handler:
+        class: AssignmentsBundle\Service\Question\QuestionRangeHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Question Numeric Handler
+    service.assignments.question_numeric_handler:
+        class: AssignmentsBundle\Service\Question\QuestionNumericHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Question AnswerList Handler
+    service.assignments.question_answer_list_handler:
+        class: AssignmentsBundle\Service\Question\QuestionAnswerListHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Checklist Handler
+    service.assignments.checklist_handler:
+        class: AssignmentsBundle\Service\Checklist\ChecklistHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Standard Task Handler
+    service.assignments.standard_task_handler:
+        class: AssignmentsBundle\Service\Task\StandardTaskHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+    api.event_listener.abstract_assignment:
+        class: AssignmentsBundle\EntityListener\AbstractAssignmentListener
+        arguments:
+            - '@security.token_storage'
+            - '@doctrine.orm.entity_manager'
+            - '@service.subscription_limits'
+            - '@jms_serializer'
+            - '@translator'
+            - '@service.assignments.manager'
+            - '@request_stack'
+        tags:
+            - { name: doctrine.orm.entity_listener, lazy: true }
+
+    api.event_listener.device_notification:
+            class: AssignmentsBundle\EntityListener\DeviceNotificationListener
+            arguments:
+                - '@security.token_storage'
+                - '@doctrine.orm.entity_manager'
+                - '@service.subscription_limits'
+                - '@redjan_ym_fcm.client'
+                - '@jms_serializer'
+                - '@translator'
+                - '@request_stack'
+            tags:
+                - { name: doctrine.orm.entity_listener, lazy: true }
+
+    api.event_listener.branch_shift:
+            class: ApiBundle\EntityListener\BranchShiftListener
+            arguments:
+                - '@security.token_storage'
+                - '@doctrine.orm.entity_manager'
+                - '@service.subscription_limits'
+                - '@redjan_ym_fcm.client'
+                - '@jms_serializer'
+                - '@translator'
+            tags:
+                - { name: doctrine.orm.entity_listener, lazy: true }
+
+# Base Assignment Handler
+    service.assignments.base_assignment_handler:
+        class: AssignmentsBundle\Service\BaseAssignmentHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'
+
+# Base Assignment Handler
+    service.assignments.assignment_handler:
+        class: AssignmentsBundle\Service\AssignmentHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.problem_report'
+            - '@service.notification_service'
+            - '@translator'

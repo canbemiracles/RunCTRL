@@ -1,0 +1,7 @@
+AssignmentsBundle\Entity\Assignment\Repeat\RepeatWeekDay:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    week_day:
+      expose: true

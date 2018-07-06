@@ -1,0 +1,3 @@
+parameters:
+  enterprise_plan_limits:
+    branch_max: 30

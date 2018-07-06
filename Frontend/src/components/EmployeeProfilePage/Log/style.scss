@@ -1,0 +1,82 @@
+
+.log {
+  background: #fff;
+  padding: 30px;
+  padding-bottom: 0;
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 22px;
+    color: #2e3a40;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+
+    tr {
+      height: 50px;
+
+      & + tr {
+        border-top: 1px solid #e6ebed;
+      }
+
+      & > * {
+        padding-right: 10px;
+        font-size: 15px;
+      }
+
+      th {
+        color: $lightgrayTxt;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+
+      .branch, .region {
+        font-family: 'Roboto-Medium';
+      }
+
+      .role {
+        color: #692cb6;
+      }
+
+      .start_shift {
+        min-width: 160px;
+
+        span {
+          display: inline-block;
+          padding: 2px 5px;
+          background: #d3f7c4;
+          font-size: 14px
+        }
+      }
+
+      .salary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 160px;
+        line-height: 50px;
+
+        .hourly {
+          color: $lightgrayTxt;
+        }
+      }
+    }
+  }
+
+  .load_more_btn {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-top: 1px solid #e6ebed;
+    outline: none;
+    color: $blue;
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

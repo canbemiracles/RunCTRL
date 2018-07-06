@@ -1,0 +1,109 @@
+# FOSElastica Configuration
+fos_elastica:
+    clients:
+        default: { host: runctrl_dev_elasticsearch_container, port: 9200 }
+    serializer:
+        serializer: jms_serializer
+    indexes:
+        api:
+            index_name: api_%kernel.environment%
+            finder: ~
+            types:
+                cashier_report:
+                    mappings:
+                        payment_method: ~
+                        amount: ~
+                        branch_shift:
+                          type: "object"
+                          properties:
+                            id: ~
+                            company_id: ~
+                            branch_id: ~
+                    persistence:
+                        driver: orm
+                        model: ApiBundle\Entity\Report\CashierReport
+                        provider: ~
+                        finder: ~
+                        repository: ApiBundle\SearchRepository\CashierReportRepository
+                commodity_report:
+                    mappings:
+                        title: ~
+                        description: ~
+                        branch_shift:
+                          type: "object"
+                          properties:
+                            id: ~
+                            company_id: ~
+                            branch_id: ~
+                    persistence:
+                        driver: orm
+                        model: ApiBundle\Entity\Report\CommodityReport
+                        provider: ~
+                        finder: ~
+                        repository: ApiBundle\SearchRepository\CommodityReportRepository
+                problem_report:
+                    mappings:
+                        title: ~
+                        description: ~
+                        branch_shift:
+                          type: "object"
+                          properties:
+                            id: ~
+                            company_id: ~
+                            branch_id: ~
+                    persistence:
+                        driver: orm
+                        model: ApiBundle\Entity\Report\ProblemReport
+                        provider: ~
+                        finder: ~
+                        repository: ApiBundle\SearchRepository\ProblemReportRepository
+                end_of_shift_report:
+                    mappings:
+                        workday_start_time: ~
+                        workday_end_time: ~
+                        employee_total_work_time: ~
+                        employee_budget: ~
+                        ratio: ~
+                        branch_shift:
+                          type: "object"
+                          properties:
+                            id: ~
+                            company_id: ~
+                            branch_id: ~
+                    persistence:
+                        driver: orm
+                        model: ApiBundle\Entity\Report\EndOfShiftReport
+                        provider: ~
+                        finder: ~
+                        repository: ApiBundle\SearchRepository\EndOfShiftReportRepository
+                employee:
+                    mappings:
+                        first_name: ~
+                        last_name: ~
+                        hourly_rate: { type: float }
+                        bonus: { type: float }
+                        phone_number:
+                            type: "object"
+                            properties:
+                                id: ~
+                                phone_number: ~
+                                prefix_number: ~
+                                country:
+                                    type: "object"
+                                    properties:
+                                      id: ~
+                        geographical_area:
+                            type: "object"
+                            properties:
+                                id: ~
+                                country:
+                                    type: "object"
+                                    properties:
+                                      id: ~
+                        company_id: ~
+                    persistence:
+                        driver: orm
+                        model: ApiBundle\Entity\Employee
+                        provider: ~
+                        finder: ~
+                        repository: ApiBundle\SearchRepository\EmployeeRepository

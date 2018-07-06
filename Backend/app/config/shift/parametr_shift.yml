@@ -1,0 +1,3 @@
+parameters:
+  config_limit_time_open: 5
+  limit_roles: 100

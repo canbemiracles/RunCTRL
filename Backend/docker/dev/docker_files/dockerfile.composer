@@ -1,0 +1,7 @@
+FROM composer/composer
+RUN apt-get update && apt-get install -y libpng12-dev libicu-dev libzmq3-dev
+RUN pecl install zmq-beta
+RUN docker-php-ext-install pdo pdo_mysql gd
+RUN echo "extension=zmq.so" > /usr/local/etc/php/conf.d/docker-zmq.ini
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl

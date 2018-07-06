@@ -1,0 +1,19 @@
+default_websockets:
+    resource: "@WebSocketsBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix: 'sockets/share_session'
+
+web_sockets_abstract_notification:
+    resource: "@WebSocketsBundle/Controller/Notification/AbstractNotificationController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+web_sockets_announcement_notification:
+    resource: "@WebSocketsBundle/Controller/Notification/AnnouncementNotificationController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+web_sockets_alert_notification:
+    resource: "@WebSocketsBundle/Controller/Notification/AlertNotificationController.php"
+    type:     annotation
+    prefix: 'api/v1'

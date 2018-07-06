@@ -1,0 +1,55 @@
+.header-account-block {
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 15px;
+}
+
+.user-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba($lightgray,.5);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-picture__image {
+  max-width: 100%;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.account-dropdown {
+  width: 220px;
+}
+
+.collapse-item {
+  background: none;
+  border: none;
+  align-items: center;
+  padding: 10px 10px 10px 15px;
+  color: #505d63;
+  margin: 0;
+  flex-grow: 1;
+  border-radius: 0;
+
+  &:active,
+  &:focus {
+    background-color: #ecf4f6;
+  }
+}
+
+.submenu-wrapper {
+  padding: 0;
+}

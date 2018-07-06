@@ -1,0 +1,247 @@
+services:
+    api.manager.user:
+        class: ApiBundle\Manager\UserManager
+        autowire: false
+        arguments:
+            - '@service_container'
+
+    api.event_listener.access_token:
+        class: ApiBundle\EntityListener\AccessTokenListener
+        arguments:
+            - '@request_stack'
+            - '@service.login_history'
+            - '@scheb_two_factor.security.google_authenticator'
+        tags:
+            - { name: doctrine.orm.entity_listener, lazy: true }
+    api.event_listener.abstract_report:
+        class: ApiBundle\EntityListener\AbstractReportListener
+        arguments:
+            - '@security.token_storage'
+            - '@doctrine.orm.entity_manager'
+            - '@service.notification_service'
+        tags:
+            - { name: doctrine.orm.entity_listener, lazy: true }
+
+    api.event_listener.password_resetting:
+        class: ApiBundle\EventListener\PasswordResettingListener
+        arguments:
+            - '@router'
+        tags:
+            - { name: kernel.event_subscriber }
+
+# Generator services
+    service.generator.branch_access_generator:
+        class: ApiBundle\Service\Generator\BranchStationAccessGenerator
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.generator.type.pin_generator'
+            - '@service.generator.type.code_generator'
+    service.generator.type.pin_generator:
+        class: ApiBundle\Service\Generator\Type\Pin
+    service.generator.type.code_generator:
+        class: ApiBundle\Service\Generator\Type\Code
+    service.generator.device_generate:
+        class: ApiBundle\Service\Generator\DeviceGenerate
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+# Token Manager
+    service.token_manager:
+        class: ApiBundle\Service\Manager\TokenManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@fos_oauth_server.access_token_manager'
+
+# Device services
+    service.device.device_attachment:
+        class: ApiBundle\Service\Device\DeviceAttachment
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@fos_oauth_server.access_token_manager'
+            - '@translator'
+            - '@service.generator.device_generate'
+
+    service.device.device_service:
+        class: ApiBundle\Service\Device\DeviceService
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@security.token_storage'
+
+# BranchShift service
+
+    service.branch_shift.branch_shift_management:
+      class: ApiBundle\Service\BranchShift\BranchShiftManagement
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - '@service.reports.problem_report'
+        - '@session'
+        - '@translator'
+        - {
+            config_limit_time_open: %config_limit_time_open%,
+            limit_roles: %limit_roles%
+          }
+
+# Report services
+    service.reports.problem_report:
+      class: ApiBundle\Service\Report\ProblemReport
+      arguments:
+        - '@doctrine.orm.entity_manager'
+
+    service.reports.end_of_shift_report:
+      class: ApiBundle\Service\Report\EndOfShiftReport
+      arguments:
+        - '@doctrine.orm.entity_manager'
+
+    service.reports.branch_status:
+          class: ApiBundle\Service\Report\BranchStatus
+          arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@jms_serializer'
+            - '@service.currency.currency_service'
+            - '@service.branch_shift.branch_shift_management'
+            - '@service.branch_station_role.branch_station_role_management'
+            - '%config_limit_time_open%'
+
+    service.reports.company_status_report:
+          class: ApiBundle\Service\Report\CompanyStatusReport
+          arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@service.reports.branch_status'
+            - '@service.currency.currency_service'
+            - '@jms_serializer'
+
+    service.reports.cashier_report:
+              class: ApiBundle\Service\Report\CashierReport
+              arguments:
+                - '@doctrine.orm.entity_manager'
+                - '@translator'
+                - '@service.currency.currency_service'
+                - '@jms_serializer'
+
+# BranchStationRole service
+    service.branch_station_role.branch_station_role_management:
+      class: ApiBundle\Service\BranchStationRole\BranchStationRoleManagement
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - '%config_limit_time_open%'
+        - '@translator'
+
+# FOSElastica service
+    service.elastica.search:
+      class: ApiBundle\Service\Elastica\SearchService
+      arguments:
+          - '@fos_elastica.manager'
+          - {
+              employee: '@fos_elastica.finder.api.employee',
+              cashier_report: '@fos_elastica.finder.api.cashier_report',
+              commodity_report: '@fos_elastica.finder.api.commodity_report',
+              problem_report: '@fos_elastica.finder.api.problem_report',
+              end_of_shift_report: '@fos_elastica.finder.api.end_of_shift_report',
+            }
+          - '@jms_serializer'
+
+# Account Services
+    service.account_confirmation:
+      class: ApiBundle\Service\User\AccountConfirmation
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - '@fos_user.mailer'
+        - '@swiftmailer.mailer.default'
+        - '@fos_user.user_manager'
+        - '@templating'
+        - '@router'
+        - {
+            mailer_sender_address: %mailer_sender_address%,
+            frontend_url: %frontend_url%,
+            system_email: %system_email%
+          }
+# Security
+# LoginHistory Service
+    service.login_history:
+      class: ApiBundle\Service\Security\LoginHistory
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - '@maxmind.geoip'
+
+# Subscription services
+    service.subscription_limits:
+      class: ApiBundle\Service\Subscription\SubscriptionLimits
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - [%free_plan_limits%]
+        - [%pro_plan_limits%]
+        - [%enterprise_plan_limits%]
+
+    service.trial_manager:
+      class: ApiBundle\Service\Subscription\TrialManager
+      arguments:
+        - '@doctrine.orm.entity_manager'
+
+# Branch services
+    service.branch_service:
+      class: ApiBundle\Service\Branch\BranchService
+      arguments:
+        - '@doctrine.orm.entity_manager'
+        - '@service.branch_station_role.branch_station_role_management'
+        - '@translator'
+        - '%config_limit_time_open%'
+        - '@service.currency.currency_service'
+# Cloudflare service
+    service.cloudflare.cloudflare_setting:
+      class: ApiBundle\Service\Cloudflare\CloudflareSetting
+      arguments:
+        - '@cloudflare.service'
+
+    security.access.permission_voter:
+        class: ApiBundle\Security\PermissionVoter
+        arguments:
+          - '@doctrine.orm.entity_manager'
+          - '@request_stack'
+        public: false
+        tags:
+           - { name: security.voter }
+
+    service.permission:
+          class: ApiBundle\Service\User\PermissionService
+          arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@translator'
+
+# UsersManagement service
+    service.admin_panel.users_management:
+              class: ApiBundle\Service\AdminPanel\UsersManagementService
+              arguments:
+                - '@doctrine.orm.entity_manager'
+                - '@translator'
+                - '@fos_user.mailer'
+                - '@service.branch_service'
+# Employee Role History Service
+    service.employee.role_history:
+        class: ApiBundle\Service\Employee\EmployeeRoleHistory
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@jms_serializer'
+            - '@knp_paginator'
+# Currency Service
+    service.currency.currency_service:
+            class: ApiBundle\Service\Currency\CurrencyService
+            arguments:
+                - '@doctrine.orm.entity_manager'
+                - '%api_key_currencylayer%'
+
+    service.currency.open_exchange_rates:
+            class: ApiBundle\Service\OpenExchangeRates\CurrencyService
+            arguments:
+                - '@doctrine.orm.entity_manager'
+                - 'ec780901d5c6495eb9078bc829ba27b0'
+                - ~
+                - '@open_exchange_rates_service.guzzle_client'
+
+    open_exchange_rates_service.guzzle_client:
+            class: GuzzleHttp\Client
+
+    fos_oauth_server.controller.token:
+          class: ApiBundle\Controller\User\TokenController
+          arguments:
+            - '@fos_oauth_server.server'
+            - '@doctrine.orm.entity_manager'

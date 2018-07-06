@@ -1,0 +1,113 @@
+version: '3'
+services:
+  runctrl_dev_mysql:
+    container_name: runctrl_dev_mysql_container
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=N5GeDWeWmxHYwN53
+      - MYSQL_DATABASE=run_control
+      - RC_MYSQL_PORT=3306
+    volumes: 
+      - ./config/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    ports:
+      - '${RC_MYSQL_PORT:-3306}:3306'
+    networks:
+      - runctrl_net
+  runctrl_dev_nginx:
+    build:
+      context: ./
+      dockerfile: ./docker_files/dockerfile.nginx
+    ports:
+      - '${RC_NGINX_PORT:-80}:80'
+      - '443:443'
+    links:
+      - runctrl_dev_fpm
+    volumes: 
+      - ./../../:/var/www/html
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./config/nginx/certificate:/opt/certs
+    command:
+      - 'bash'
+      - '/var/www/html/docker/dev/scripts/nginx.sh'
+    networks:
+      - runctrl_net
+  runctrl_dev_fpm:
+    container_name: runctrl_dev_php_container
+    build:
+      context: ./
+      dockerfile: ./docker_files/dockerfile.php-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./../../:/var/www/html
+      - ./config/parameters.yml:/var/www/html/app/config/parameters.yml
+      - ./config/parameters_test.yml:/var/www/html/app/config/parameters_test.yml
+      - ./config/php/php.ini:/usr/local/etc/php/php.ini
+    command:
+      - 'bash'
+      - '/var/www/html/docker/dev/scripts/php-fpm.sh'
+    networks:
+      - runctrl_net
+  runctrl_dev_composer:
+    container_name: runctrl_dev_composer_container
+    build:
+      context: ./
+      dockerfile: ./docker_files/dockerfile.composer
+    volumes:
+      - ./../../:/var/www/html
+      - ./config/parameters.yml:/var/www/html/app/config/parameters.yml
+    working_dir: /var/www/html
+    command: 
+      - 'install'
+      - '--quiet'
+    networks:
+      - runctrl_net
+  runctrl_dev_migrations:
+    build:
+      context: ./
+      dockerfile: ./docker_files/dockerfile.migrations
+    volumes:
+      - ./../../:/var/www/html
+      - ./config/parameters.yml:/var/www/html/app/config/parameters.yml
+    command: 
+      - 'bash'
+      - '/var/www/html/docker/dev/scripts/migrations.sh'
+#     - '--recreate-database'
+      - '${RC_MIGRATIONS_PARAMS:- }'
+    networks:
+      - runctrl_net
+  runctrl_dev_elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.2
+    container_name: runctrl_dev_elasticsearch_container
+    environment:
+      - cluster.name=docker-cluster
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    networks:
+      - runctrl_net
+  runctrl_dev_websocket:
+    container_name: runctrl_dev_websocket_container
+    build:
+      context: ./
+      dockerfile: ./docker_files/dockerfile.websocket
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./../../:/var/www/html
+      - ./config/parameters.yml:/var/www/html/app/config/parameters.yml
+    command:
+      - 'bash'
+      - '/var/www/html/docker/dev/scripts/web_socket.sh'
+    networks:
+      runctrl_net:
+        ipv4_address: 172.21.0.30
+networks:
+  runctrl_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.21.0.0/16

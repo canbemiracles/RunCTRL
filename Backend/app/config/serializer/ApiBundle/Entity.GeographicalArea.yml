@@ -1,0 +1,15 @@
+ApiBundle\Entity\GeographicalArea:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    country:
+      expose: true
+    region:
+      expose: true
+    city:
+      expose: true
+    street_address:
+      expose: true
+    zip:
+      expose: true

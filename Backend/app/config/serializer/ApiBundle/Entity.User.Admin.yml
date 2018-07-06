@@ -1,0 +1,5 @@
+ApiBundle\Entity\User\Admin:
+  exclusion_policy: ALL
+  properties:
+    company:
+      expose: true

@@ -1,0 +1,15 @@
+actor: ApiTester
+modules:
+    enabled:
+        - Symfony:
+            app_path: 'app'
+            var_path: 'var'
+            environment: 'test'
+        - Doctrine2:
+            depends: Symfony
+        - REST:
+            url: /api/v1
+            depends: Symfony
+            part: Json
+        - \Helper\Api
+error_level: "E_ALL & ~E_STRICT & ~E_DEPRECATED & ~E_USER_DEPRECATED"

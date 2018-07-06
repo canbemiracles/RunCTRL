@@ -1,0 +1,5 @@
+parameters:
+  free_plan_limits:
+    branch_max: 10
+    station_max: 30
+    total_tasks: 200

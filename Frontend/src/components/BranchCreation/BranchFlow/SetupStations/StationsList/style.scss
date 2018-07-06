@@ -1,0 +1,21 @@
+.station-container, .drag-wrap{
+    height: 100%;
+}
+.dragArea{
+    flex-grow: 1;
+    height: 100%;
+}
+.list-complete-enter{
+    opacity: 0;
+}
+.list-complete-enter-active{
+    transition: opacity .8s ease .2s;
+}
+.list-complete-leave-active{
+    transition: opacity .8s ease;
+    opacity: 0;
+    position: absolute; 
+}
+.list-complete-move{
+   transition: transform .4s; 
+}

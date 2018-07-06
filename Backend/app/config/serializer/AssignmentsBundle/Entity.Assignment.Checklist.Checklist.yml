@@ -1,0 +1,7 @@
+AssignmentsBundle\Entity\Assignment\Checklist\Checklist:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    tasks:
+      expose: true

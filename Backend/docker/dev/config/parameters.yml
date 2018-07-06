@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: runctrl_dev_mysql_container
+    database_port: 3306
+    database_name: run_control
+    database_user: root
+    database_password: N5GeDWeWmxHYwN53
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_port: 465
+    mailer_user: no.reply.bugtrackercom@gmail.com
+    mailer_password: Q4Y7yEcH2rDGvXCT
+    mailer_sender_address: bugtrackerexample@gmail.com
+    secret: ThisTokenIsNotSoSecretChangeIt
+    zmq_pusher_host: 172.21.0.30
+    zmq_pusher_port: 5555

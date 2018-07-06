@@ -1,0 +1,101 @@
+.branch-data-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgba(28, 60, 77, 0.1);
+    background-color: $white;
+    border-radius: 2px; 
+    overflow: hidden;
+}
+.no-margin{
+    margin: 0;
+    width: 100%;
+}
+
+.branch-data-container{
+    & /deep/ .employees-list-inner,
+    & /deep/ .branch-input
+    {
+        padding: 15px;
+    }
+    & /deep/ .employees-list-inner{
+        padding-left: 0;
+    }
+    & /deep/ .employees-list-wrap{
+        margin: 0 15px;
+        position: relative;
+        overflow: hidden;
+        &:after{
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 10%;
+            height: 100%;
+            background-image: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);  
+        }    
+    }
+    
+    & /deep/ .header-row{
+        padding: 13px 15px;
+    }
+    & /deep/ .branch-input{
+        padding: 20px 15px;
+        width: 100%;
+    }
+    & /deep/ .branch-item{
+        border-right: 1px solid #e6ecee;
+        border-bottom: 1px solid #e6ecee;
+    }
+    & /deep/ .branch-item-bottom{
+        padding: 20px 15px 30px;
+    }
+    & /deep/ .branch-form-input{
+        border: none;
+        width: 100%;
+        font-size: 18px;
+        padding: 5px 0;
+        &:focus{
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    & /deep/ .phones-row{
+        margin-top: 10px;
+    }
+    & /deep/ .btn-item{
+        margin-right: 10px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+    & /deep/ .btn-create{
+        width: 100%;
+        height: 60px;
+        border: 0;
+        background-color: $blue;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: "Roboto-Medium", sans-serif;
+        letter-spacing: 1px;
+        transition: all ease 300ms;
+        color: #2e3a40;
+        &:hover{
+            background-color: lighten($blue, 10);
+            color: lighten(#2e3a40, 10); 
+        }
+    }
+    
+    
+}
+#app .branch-item .field-error{
+    border: none;
+    border-bottom: 1px solid $cancelRed;
+}
+#app .branch-item .error-message{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid $cancelRed;
+}

@@ -1,0 +1,15 @@
+ApiBundle\Entity\Recommendations\RecommendationsRoles:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    color:
+      expose: true
+    defaulted:
+      expose: true
+
+  virtual_properties:
+    getRecommendationsStationId:
+      serialized_name: recommendations_station_id

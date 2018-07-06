@@ -1,0 +1,4 @@
+            
+                                
+                              
+<svg class="currentLayer" xmlns="http://www.w3.org/2000/svg" id="svg_1"  width="1000px" height="500px" viewBox="0 0 1000 500"><defs><filter id="f4" x="0" y="0" width="200%" height="200%"><feOffset result="offOut" in="SourceGraphic" dx="0" dy="20" /><feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" /><feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="50" /><feBlend in="SourceGraphic" in2="blurOut" mode="normal" /></filter></defs><path d="M 0 500 L 1000 500 L 500 0 L 0 500 z" filter="url(#f4)"/></svg>

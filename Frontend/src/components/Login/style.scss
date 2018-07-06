@@ -1,0 +1,157 @@
+.login-bg{
+    height: 100vh;
+    width: 100%;
+    background: url(~images/logo_bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    &:after {
+        content: " ";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color: rgba(#042a45, .93);
+    }
+}
+.login-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include xs{
+      padding: 15px;  
+    } 
+    & /deep/ .logo-main{
+        width: 150px;
+        height: 152px;
+        margin-bottom: 55px;
+        margin-top: auto;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+        @include xs{
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;  
+        }
+    }
+    & /deep/ .logo-img{
+    max-width: 100%;
+    }
+    & /deep/ figure, form{
+        width: 100%;
+    }
+    & /deep/ .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 360px;
+        flex-grow: 1;
+        width: 100%; 
+    }
+    & /deep/ .form-title{
+        font-size: 22px;
+        text-align: center;
+        color: $white;
+    }
+    & /deep/ .form-title-sign-up{
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    & /deep/ .form-title-info{
+        color: $lightgreen;
+        font-size: 24px;
+    }
+    & /deep/ .form-txt{
+        font-size: 16px;
+        color: $white;
+    }
+    & /deep/ .field-form{
+        padding: 17px 21px;
+        background-color: $white;
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: $lightgray;
+        border-radius: 2px;
+        border: none; 
+    }
+    & /deep/ .submit-btn{
+        width: 100%;
+        padding: 13px 0;
+        height: auto;
+        background-color: $blue;
+        border-radius: 100px;
+        border:none;
+        margin-top: 20px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        transition: all ease 300ms;
+        border: 2px solid transparent;
+        color: #2e3a40;
+        font-size: 18px;
+        font-weight: 500;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        @include xs{
+            margin-top: 10px;  
+        }
+    }
+    & /deep/ .form-info{
+        margin-top: 20px;
+        @include xs{
+            margin-top: 10px;  
+        }
+    }
+    & /deep/ .form-info-bottom{
+        margin-top: auto;
+        margin-bottom: 50px;
+        @include xs{
+            margin-bottom: 0;  
+        } 
+    }
+    & /deep/ .form-info-txt{
+    color: $lightgray2;
+    margin-right: 5px;
+    }
+    & /deep/ .form-link{
+        color: $blue;
+        font-size: 15px;
+        &:hover{
+            color: $blue;
+        }
+    }
+    & /deep/ .mb-30{
+        margin-bottom: 30px;
+    }
+    & /deep/ .historyBack{
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    }
+    & /deep/ .arrow-back{
+    fill: #fff;
+    }
+    & /deep/ .error-message{
+        color: $cancelRed;
+        font-family: "Roboto-Medium";
+        text-align: center;
+    }
+}
+

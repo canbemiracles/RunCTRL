@@ -1,0 +1,59 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+
+# Fos User routes override
+fos_user_resetting_check_email:
+    path: /resetting/sended
+    defaults: { _controller: ApiBundle:User/User:emailSent}
+fos_user_resetting_success:
+    path: /resetting/success
+    defaults: { _controller: ApiBundle:User/User:resettingSuccess}
+
+# Bundle routes
+
+api_bundle:
+    resource: "@ApiBundle/Resources/config/routing.yml"
+
+assignments_bundle:
+    resource: "@AssignmentsBundle/Resources/config/routing.yml"
+
+web_sockets_bundle:
+    resource: "@WebSocketsBundle/Resources/config/routing.yml"
+
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+nelmio_api_swagger:
+    resource: "@NelmioApiDocBundle/Resources/config/swagger_routing.yml"
+    prefix: /api-docs
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+fos_user_registration_confirmed:
+    path: /registration/confirmed
+    defaults: { _controller: ApiBundle:User/User:confirmed }
+
+payum_all:
+    resource: "@PayumBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,9 @@
+ApiBundle\Entity\User\Device\Device:
+  exclusion_policy: ALL
+  virtual_properties:
+    getBranchId:
+      serialized_name: branch_id
+      type: integer
+    getStationId:
+      serialized_name: station_id
+      type: integer

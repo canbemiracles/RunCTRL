@@ -1,0 +1,24 @@
+ApiBundle\Entity\BranchShift:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    shift_day:
+      expose: true
+    time_open:
+      expose: true
+    time_close:
+      expose: true
+    employees:
+      expose: true
+    name:
+      expose: true
+  virtual_properties:
+    getCompanyId:
+      serialized_name: company_id
+    getBranchId:
+      serialized_name: branch_id
+    getCustomTimeOpen:
+      serialized_name: time_open_custom
+    getCustomTimeClose:
+      serialized_name: time_close_custom

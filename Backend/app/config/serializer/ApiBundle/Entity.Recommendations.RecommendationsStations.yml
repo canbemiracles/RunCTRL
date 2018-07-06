@@ -1,0 +1,15 @@
+ApiBundle\Entity\Recommendations\RecommendationsStations:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    color:
+      expose: true
+    recommendations_roles:
+      expose: true
+
+  virtual_properties:
+      getSubcategoryId:
+        serialized_name: subcategory_id

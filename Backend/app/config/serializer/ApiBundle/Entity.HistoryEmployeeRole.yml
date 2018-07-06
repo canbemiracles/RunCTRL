@@ -1,0 +1,15 @@
+ApiBundle\Entity\HistoryEmployeeRole:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    employee:
+      expose: true
+    role:
+      expose: true
+    branch_shift:
+      expose: true
+    date_start:
+      expose: true
+    date_end:
+      expose: true

@@ -1,0 +1,120 @@
+/*
+ * Blocks
+ *
+ */
+
+.branch-td {
+    width: 25%;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #e6ecee;
+    border-right: 1px solid #e6ecee;
+
+    &__id,
+    &__call,
+    &__del {
+        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__id{
+        border-bottom: 1px solid #e6ecee;
+        border-right: 1px solid #e6ecee;
+    }
+}
+
+/*
+ * Elements
+ *
+ */
+
+.branch {
+    display: inline-block;
+    width: 100%;
+
+    font-size: 15px;
+    color: #2e3a40;
+
+    border: none;
+    outline: none;
+
+    &__address {
+        padding: 20px;
+    }
+
+    &__manager {
+        outline: none;
+        height: 100%;
+    }
+
+    &__btn-add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+    } 
+}
+.icon-user-plus{
+    fill: #8b9da6;
+}
+.branch__button {
+    padding: 0;
+    margin-top: 5px;
+
+    background-color: #fff;
+
+    border: none;
+    outline: none;
+}
+
+.branch__call {
+    width: 35px;
+    height: 35px;
+}
+
+.wrap__branch-phones {
+    padding: 20px 0;
+
+    background-color: #f4fbfc;
+}
+
+.branch__title {
+    margin-top: 10px;
+    margin-left: 40px;
+
+    font-size: 18px;
+    color: #2f3b40;
+}
+.table-row{
+    transition: all ease 300ms;
+}
+.autocomplete-input.error{
+    /deep/ .form_input{
+      color: $cancelRed;  
+    }
+}
+.autocomplete-input.success{
+    /deep/ .form_input{
+      color: $readygreen;  
+    }
+}
+.loader-wrap.small-preloader{
+    width: 10%;
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: #fff;
+    /deep/ #loader{
+        width: 25px;
+        height: 25px;
+        margin-left: auto;
+        &:before, &:after{
+            border-width: 4px;
+            border-top-color: lighten($blue, 20);
+        }
+        &:after{
+            border-color: #cccccc94;
+        }
+        
+    }
+}

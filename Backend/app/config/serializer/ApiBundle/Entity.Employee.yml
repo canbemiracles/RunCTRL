@@ -1,0 +1,42 @@
+ApiBundle\Entity\Employee:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    first_name:
+      expose: true
+    last_name:
+      expose: true
+    phone_number:
+      expose: true
+    prefix_number:
+      expose: true
+    family_situation:
+      expose: true
+    hourly_rate:
+      expose: true
+    geographical_area:
+      expose: true
+    avatar:
+      expose: true
+    social_security_number:
+      expose: true
+    bonus:
+      expose: true
+#    company:
+#      expose: true
+#    branches:
+#      expose: true
+#      max_depth: 1
+
+  virtual_properties:
+      getCompanyId:
+        serialized_name: company_id
+      getBranchesInfo:
+        serialized_name: branches
+      getRolesInfo:
+        serialized_name: roles_info
+      getBranchShiftInfo:
+        serialized_name: branch_shifts_info
+      getBranchMangerInfo:
+        serialized_name: branch_manager

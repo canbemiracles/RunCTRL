@@ -1,0 +1,19 @@
+ApiBundle\Entity\Role\AbstractBranchStationRole:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    role:
+      expose: true
+    color:
+      expose: true
+    #assignments:
+     # expose: true
+
+  virtual_properties:
+    getBranchStationId:
+      serialized_name: branch_station_id
+    getBranchStationName:
+      serialized_name: branch_station
+    getBranchId:
+      serialized_name: branch_id

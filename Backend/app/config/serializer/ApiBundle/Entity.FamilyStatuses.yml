@@ -1,0 +1,7 @@
+ApiBundle\Entity\FamilyStatuses:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    family_status:
+      expose: true

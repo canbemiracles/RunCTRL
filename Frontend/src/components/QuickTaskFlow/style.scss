@@ -1,0 +1,11 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.task-card {
+    width: 381px;
+    height: 292px;
+    margin: 1% 0 0 5%;
+    box-shadow: 0 0 7vh rgba(173, 186, 192, 1);
+}

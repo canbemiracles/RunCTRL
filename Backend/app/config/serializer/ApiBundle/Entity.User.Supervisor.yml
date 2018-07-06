@@ -1,0 +1,3 @@
+ApiBundle\Entity\User\Supervisor:
+  exclusion_policy: ALL
+  properties:

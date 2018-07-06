@@ -1,0 +1,79 @@
+# This folder is cached between builds
+cache:
+  paths:
+  - node_modules/
+
+stages:
+  - analysis
+  - build
+  - release
+  - release_dev
+
+sonarqube:
+  stage: analysis
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: http://sonar.simplex.ink
+    SONAR_ANALYSIS_MODE: publish
+  script:
+  - gitlab-sonar-scanner -Dsonar.projectKey=run-control-frontend -Dsonar.login=$SONAR_TOKEN
+
+build:
+  stage: build
+  image: node:6
+  before_script:
+    - npm install
+  script:
+    - npm run build
+    - cp index.html ./dist
+    - cp robots.txt ./dist
+  artifacts:
+    paths:
+     - dist
+
+
+release:
+  stage: release
+  image: docker:latest
+  only:
+    - "master"
+  dependencies:
+    - build
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+  before_script:
+    - docker version
+    - "docker info"
+    - "docker login $SIMPLEX_REGISTRY_HOST -u $RC_FRONTEND_REGISTRY_USER -p $RC_FRONTEND_REGISTRY_PASSWORD"
+  script:
+    - "ls"
+    - "ls dist"
+    - "docker build -t $SIMPLEX_REGISTRY_HOST/$RC_FRONTEND_IMAGE_NAME:latest --pull ."
+    - "docker push $SIMPLEX_REGISTRY_HOST/$RC_FRONTEND_IMAGE_NAME:latest"
+  after_script:
+    - "docker logout $SIMPLEX_REGISTRY_HOST"
+
+release_dev:
+  stage: release_dev
+  image: docker:latest
+  only:
+    - "DEV"
+  dependencies:
+    - build
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+  before_script:
+    - docker version
+    - "docker info"
+    - "docker login $SIMPLEX_REGISTRY_HOST -u $RC_FRONTEND_REGISTRY_USER -p $RC_FRONTEND_REGISTRY_PASSWORD"
+  script:
+    - "ls"
+    - "ls dist"
+    - "docker build -t $SIMPLEX_REGISTRY_HOST/$RC_FRONTEND_IMAGE_NAME_DEV:latest --pull ."
+    - "docker push $SIMPLEX_REGISTRY_HOST/$RC_FRONTEND_IMAGE_NAME_DEV:latest"
+  after_script:
+    - "docker logout $SIMPLEX_REGISTRY_HOST"

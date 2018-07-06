@@ -1,0 +1,14 @@
+gos_web_socket:
+    server:
+        port: 8080        #The port the socket server will listen on
+        host: 0.0.0.0   #The host ip to bind to
+        router:
+            resources:
+                - '@WebSocketsBundle/Resources/config/pubsub/routing.yml'
+    pushers:
+        zmq:
+            default: true
+            host: '%zmq_pusher_host%'
+            port: '%zmq_pusher_port%'
+            persistent: true
+            protocol: tcp

@@ -1,0 +1,7 @@
+AssignmentsBundle\Entity\Assignment\Repeat\RepeatMonthDay:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    month_day:
+      expose: true

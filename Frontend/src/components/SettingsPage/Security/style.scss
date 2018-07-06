@@ -1,0 +1,149 @@
+h3 {
+  color: #2f3b40;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+h4 {
+  color: #2f3b40;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+p {
+  color: rgba(80, 93, 99, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.top {
+  display: flex;
+  box-shadow: 0 3px 10px rgba(28, 60, 77, 0.1);
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 63px;
+  height: 80px;
+  margin-right: 24px;
+}
+
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 130px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d9e2e7;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0fd5f7;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.close {
+  margin-top: -20px;
+  margin-right: -15px;
+}
+
+.qr-wrapper {
+  text-align: center;
+  margin: 20px;
+}
+
+.trouble {
+
+  text-align: center;
+  a {
+    color: #0bcdee;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.controls {
+  input, button {
+    width: 49%;
+    height: 45px;
+  }
+  input {
+    border-radius: 2px;
+    border: 1px solid #ccd7dd;
+    color: #8c9ba4;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 15px;
+    &:focus{
+      outline: none;
+    }
+  }
+  button {
+    border-radius: 50px;
+    background-color: #e9f1f5;
+    border: none;
+    color: rgba(46, 58, 64, 0.4);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    &.blue {
+      background-color: #0fd5f7;
+      color: #2e3a40;
+    }
+    &:focus {
+      outline: none
+    }
+  }
+}

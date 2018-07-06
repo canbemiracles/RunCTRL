@@ -1,0 +1,23 @@
+{
+  "presets": [
+    ["env", { "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 10"]
+      }
+    }],
+    ["stage-1"],
+    ["latest", {
+      "es2015": { "modules": false }
+    }]
+  ],
+  "plugins": ["transform-runtime", "syntax-dynamic-import"],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}],
+        ["stage-1"]
+      ],
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

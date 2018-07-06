@@ -1,0 +1,73 @@
+.station{
+    background-color: $white;
+    box-shadow: 0 3px 10px rgba(28, 60, 77, 0.1);
+    transition: transform ease 400ms;
+    width: 100%;
+    height: 225px;
+    margin-bottom: 30px;
+    position: relative;
+    &:hover{
+        box-shadow: 0 5px 10px rgba(28, 60, 77, 0.1);
+        transform: translate3d(0, 10px, 0);
+        cursor: pointer;
+    }
+}
+.station-inner{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.label-button{
+    text-align: center;
+    margin-top: 18px;
+    color: #7e8a90;
+}
+.station-data-inner{
+    width: 100%;
+}
+.station-data-content{
+    padding: 20px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+}
+.station-name{
+  margin-bottom: 15px;
+  color: #2f3b40;
+  line-height: 1;
+  font-size: 18px;  
+}
+.station-devices{
+    height: 50px;
+    flex-shrink: 0;
+    border-top: 1px solid #e6ecee;
+    padding: 0 20px;
+    align-items: center;
+    .device-item{
+        margin-right: 20px;
+        height: 100%;
+    }
+}
+.station-roles-list{
+    overflow: hidden;
+    position: relative;
+    &:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        background-image: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+}
+.close-station{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    /deep/ .icon-close{
+        width: 15px;
+        height: 15px;
+        stroke: #8a8484;
+        stroke-width: 2px;
+    }
+}

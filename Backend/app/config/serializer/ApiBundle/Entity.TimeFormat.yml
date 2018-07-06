@@ -1,0 +1,7 @@
+ApiBundle\Entity\TimeFormat:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    time_format:
+      expose: true

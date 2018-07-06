@@ -1,0 +1,21 @@
+ApiBundle\Entity\Report\AbstractReport:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    read:
+      expose: true
+    branch_shift:
+      expose: true
+    created:
+      expose: true
+    archive:
+      expose: true
+
+  virtual_properties:
+    getBranchManager:
+      serialized_name: branch_manager
+    getBranchGeoArea:
+      serialized_name: geographical_area
+    getCreatedTimeZone:
+      serialized_name: created_t

@@ -1,0 +1,226 @@
+#Controller only for tests
+default_controller:
+    resource: "@ApiBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix: 'tests/'
+
+api_users:
+    resource: "@ApiBundle/Controller/User/UserController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_users_admins:
+    resource: "@ApiBundle/Controller/User/AdminController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_users_supervisors:
+    resource: "@ApiBundle/Controller/User/SupervisorController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_users_branch_managers:
+    resource: "@ApiBundle/Controller/User/BranchManagerController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_users_office_employees:
+    resource: "@ApiBundle/Controller/User/OfficeEmployeeController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_users_co_managers:
+    resource: "@ApiBundle/Controller/User/CoManagerController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_time_zones:
+    resource: "@ApiBundle/Controller/TimeZoneController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_currencies:
+    resource: "@ApiBundle/Controller/CurrencyController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+
+api_countries:
+    resource: "@ApiBundle/Controller/CountryController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_geographical_areas:
+    resource: "@ApiBundle/Controller/GeographicalAreaController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branches:
+    resource: "@ApiBundle/Controller/BranchController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branch_shifts:
+    resource: "@ApiBundle/Controller/BranchShiftController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branch_stations:
+    resource: "@ApiBundle/Controller/BranchStationController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_companies:
+    resource: "@ApiBundle/Controller/CompanyController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_employees:
+    resource: "@ApiBundle/Controller/EmployeeController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_company_reports:
+    resource: "@ApiBundle/Controller/Report/ReportController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_cashier_reports:
+    resource: "@ApiBundle/Controller/Report/CashierReportController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_commodity_reports:
+    resource: "@ApiBundle/Controller/Report/CommodityReportController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_problem_reports:
+    resource: "@ApiBundle/Controller/Report/ProblemReportController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_end_of_shift_reports:
+    resource: "@ApiBundle/Controller/Report/EndOfShiftReportController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branch_station_origin_roles:
+    resource: "@ApiBundle/Controller/Role/BranchStationOriginRoleController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branch_station_temp_roles:
+    resource: "@ApiBundle/Controller/Role/BranchStationTempRoleController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_shift_days:
+    resource: "@ApiBundle/Controller/ShiftDayController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_devices:
+    resource: "@ApiBundle/Controller/User/DeviceController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_recent_login:
+    resource: "@ApiBundle/Controller/Security/RecentLoginController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_white_countries:
+    resource: "@ApiBundle/Controller/Security/WhiteCountryController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_date_formats:
+    resource: "@ApiBundle/Controller/DateFormatController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_industry_categories:
+    resource: "@ApiBundle/Controller/IndustryCategoryController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_subcategories:
+    resource: "@ApiBundle/Controller/SubcategoryController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_cards:
+    resource: "@ApiBundle/Controller/Card/CardController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_history_card_payments:
+    resource: "@ApiBundle/Controller/Card/HistoryCardPaymentController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_payments:
+    resource: "@ApiBundle/Controller/Card/PaymentController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_recommendations_stations:
+    resource: "@ApiBundle/Controller/Recommendations/RecommendationsStationsController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_recommendations_roles:
+    resource: "@ApiBundle/Controller/Recommendations/RecommendationsRolesController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_cloudflare:
+    resource: "@ApiBundle/Controller/Cloudflare/CloudflareController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_permissions:
+    resource: "@ApiBundle/Controller/User/PermissionController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_admin_panel:
+    resource: "@ApiBundle/Controller/AdminPanel/AdminPanelController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_custom_notification:
+    resource: "@ApiBundle/Controller/Notification/CustomNotificationController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_branch_station_role:
+    resource: "@ApiBundle/Controller/Role/BranchStationRoleController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_cashier_report_group:
+    resource: "@ApiBundle/Controller/Report/CashierReportGroupController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_utc:
+    resource: "@ApiBundle/Controller/UTCController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_time_format:
+    resource: "@ApiBundle/Controller/TimeFormatController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_user_owners:
+    resource: "@ApiBundle/Controller/User/OwnerController.php"
+    type:     annotation
+    prefix: 'api/v1'
+
+api_family_statuses:
+    resource: "@ApiBundle/Controller/FamilyStatusesController.php"
+    type:     annotation
+    prefix: 'api/v1'

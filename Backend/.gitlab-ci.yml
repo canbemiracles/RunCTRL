@@ -1,0 +1,18 @@
+stages:
+  - analysis
+
+sonarqube:
+
+  stage: analysis
+
+  image: ciricihq/gitlab-sonar-scanner
+
+  variables:
+
+    SONAR_URL: http://sonar.simplex.ink
+
+    SONAR_ANALYSIS_MODE: publish
+
+  script:
+
+  - gitlab-sonar-scanner -Dsonar.projectKey=runcontrol-backend -Dsonar.login=$SONAR_TOKEN

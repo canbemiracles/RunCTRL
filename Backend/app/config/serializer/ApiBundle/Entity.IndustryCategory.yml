@@ -1,0 +1,9 @@
+ApiBundle\Entity\IndustryCategory:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    category:
+      expose: true
+    subcategories:
+      expose: true

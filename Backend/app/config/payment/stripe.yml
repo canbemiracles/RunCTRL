@@ -1,0 +1,3 @@
+parameters:
+    stripe_publishable_key: pk_test_r7ayuctbfkLUzQecQcI23IHF
+    stripe_secret_key: sk_test_h04Qx7XxMkcU7fSVLjnKKzJw

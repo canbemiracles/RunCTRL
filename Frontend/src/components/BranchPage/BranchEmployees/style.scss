@@ -1,0 +1,49 @@
+.select-employees{
+    max-width: 325px;
+    width: 100%;
+    margin-left: auto;
+    /deep/ .select-options{
+        border-top: none;
+    }
+    
+}
+
+.create-employee-btn{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #627680;
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #dfe5e8;
+}
+.icon-add-plus{
+   color: $blue;
+   font-size: 18px;
+   margin-right: 0.5em;
+}
+.view-all{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Roboto-Medium";
+    padding: 0 0.5em;
+    margin: 20px auto 30px;
+    transition: all ease 300ms;
+    border: 1px solid transparent;
+    &:hover{
+        text-decoration: none;
+        border: 1px solid #0eb5ed;
+    } 
+}

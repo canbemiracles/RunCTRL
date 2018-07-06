@@ -1,0 +1,17 @@
+.template{
+    height: 45px;
+    padding: 15px;
+    background-color: #ecfafe;
+    border: 1px dashed #c0dae6;
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all ease 300ms;
+    &:hover{
+        background-color: darken(#ecfafe, 5);
+    }
+}
+.text{
+    margin-left: 13px;
+}

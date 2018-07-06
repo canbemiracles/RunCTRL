@@ -1,0 +1,16 @@
+FROM php:7.0-fpm
+RUN apt-get update && apt-get install -y \
+        libmcrypt-dev libcurl4-gnutls-dev libxml2-dev zlib1g-dev libpng12-dev libzmq3-dev libicu-dev procps acl cron
+RUN pecl install zmq-beta
+RUN docker-php-ext-install \
+mcrypt \
+mysqli \
+pdo \
+pdo_mysql \
+curl \
+xml \
+zip \
+gd
+RUN echo "extension=zmq.so" > /usr/local/etc/php/conf.d/docker-zmq.ini
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl

@@ -1,0 +1,62 @@
+.thank_you {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.ty_top {
+  font-size: 26px;
+  color: #2e3a40;
+  margin-bottom: 55px;
+}
+
+.ty_bot {
+  font-size: 16px;
+  color: #505d63;
+  margin-top: 40px;
+}
+
+.ty_mail {
+  font-size: 22px;
+  color: #2e3a40;
+  margin-top: 14px;
+}
+.nav-link{
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 300ms ease;
+  &:hover{
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+.welcome_link{
+  color: $blue;
+  font-size: 15px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.block-info{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+.block-info.error .ty_bot{
+  margin-top: 0;
+  color: $cancelRed;
+}
+.thank-block-wrap{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafcfc;
+}
+.success{
+  font-size: 18px;
+  margin-bottom: 15px;
+}

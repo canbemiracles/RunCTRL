@@ -1,0 +1,7 @@
+ApiBundle\Entity\Currency:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    currency:
+      expose: true

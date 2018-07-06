@@ -1,0 +1,21 @@
+version: '2'
+services:
+  runctrl_frontend_build:
+    container_name: runctrl_frontend_build
+    image: node:6
+    volumes:
+      - ./../:/opt/frontend
+    command:
+      - 'bash'
+      - '/opt/frontend/docker/build/build.sh'
+
+  runctrl_frontend_nginx:
+    container_name: runctrl_frontend_nginx
+    image: nginx:latest
+    volumes: 
+      - ./../:/var/www/html/
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/certificate:/opt/certs
+    ports:
+      - "80:80"
+      - "443:443"

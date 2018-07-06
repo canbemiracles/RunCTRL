@@ -1,0 +1,284 @@
+.create-popup-wrap{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+.create-popup{
+    position: relative;
+    max-width: 888px;
+    flex-basis: 80%;
+    margin: auto;
+    background-color: $white;
+    padding: 10px;
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(28, 60, 77, 0.3), 0 0 10px rgba(28, 60, 77, 0.2);
+}
+.create-data{
+    padding: 0;
+}
+.create-data .data-title .title{
+    text-align: left;
+}
+.data-title{
+    padding: 20px 20px 20px 30px;
+    background-color: #e9f1f5;
+    border-radius: 2px 0 0;
+    height: 60px;
+    color: $gray;
+    align-items: center;
+}
+.data-content{
+    flex-grow: 1;
+    border-bottom: 1px solid #e6ecee; 
+}
+.roles .data-title{
+    background: none;
+    border-bottom: 1px solid #e6ecee;
+    color: #505d63;
+    padding-left: 15px; 
+    .title{
+        font-size: 16px;
+        text-align: left;
+        font-family: 'Roboto-Medium';
+    }
+} 
+.btn-close {
+    & /deep/ .icon-close{
+      height: 14px;
+      width: 14px;  
+    }
+    display: block;
+}
+.form-input-name{
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    color: $gray;
+    @include placeholder{
+        color: #97a7af;
+    }
+    &:focus{
+        box-shadow: none;
+        outline: none;
+        border: none;
+    }
+}
+.form-input-name__station{
+    padding: 25px 15px;
+}
+.form-input-name__role{
+   padding: 13px; 
+}
+.add-role{  
+    padding: 0 15px;
+    height: 55px; 
+}
+.add-role__btn{
+    align-self: center;
+}
+.add-role__inner{
+    height: 100%;
+    position: relative;
+    border-top: 1px solid #e6ecee; 
+}
+.roles{
+    background-color: #f1f5f6;
+    padding: 0;
+}
+.data-content-left{
+    border-right: 1px solid #e6ecee; 
+}
+.data-content-right{
+    padding: 0;
+}
+.attach-device{
+    padding: 0 15px;
+    flex-grow: 1;
+}
+.data-footer{
+  height: 50px;
+
+}
+.btn-create{
+    background: none;
+    border: none;
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Roboto-Bold';
+    color: #627680;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color ease 300ms;
+    &:focus{
+        color: #627680;
+        background: none;
+        border: none;
+        outline: none; 
+    } 
+    &:hover{
+        color: $gray;
+    }
+    &.disable{
+        background-color: #e6e6e6fa;
+        color: #fff;
+    }
+
+}
+.tip{
+    position: relative;
+}
+.tip-txt{
+    font-size: 12px;
+    text-align: center;
+    color: #7e8a90;
+    padding: 20px 25px 0px 10px;
+}
+.tip .icon-tip{
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.tip-code{
+    width: 100%;
+}
+.code{
+   text-align: center;
+   font-size: 22px;
+   color: #627680;
+   padding: 15px 0 5px;
+   line-height: 1;
+}
+.device{
+    margin: 30px 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+.qr-code{
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 20px;
+    height: 150px;
+}
+.devices-icons{
+    height: 56px;
+}
+.devices-icons__inner{
+    height: 100%;
+    border-top: 1px solid #e6ecee; 
+}
+.device-item{
+    justify-content: center;
+    border-right: 1px solid #e6ecee;
+    flex: 1;
+    position: relative;
+    &:last-child{
+        border-right: none;
+    }
+    &:hover{
+        .close-device{
+            opacity: 1;
+        }
+    }
+}
+.close-device{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity ease 300ms;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(#e9eff2, .8);
+    &:hover{
+        .btn-close{
+           pointer-events: none;
+        }
+    }
+}
+.set-roles{
+    padding: 20px 15px;
+    flex-grow: 1;
+}
+.set-roles-list-wrap, .set-roles-list{
+    flex-grow: 1;
+}
+.set-roles__title{
+    font-size: 18px;
+    color: #2f3b40;
+}
+.color-picker{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+}
+.role-color{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    align-self: center;
+    cursor: pointer;  
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0
+}
+.add-role-btn{
+    align-self: center;
+    cursor: pointer;
+    width: 23px;
+    height: 100%;
+    flex-shrink: 0;
+}
+.icon-check{
+    fill: $blue;
+    width: 100%;
+    max-height: 100%;
+}
+.set-roles-list{
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    list-style: none;   
+}
+.set-roles__item{
+    flex-shrink: 0;
+}
+.bold-highlight{
+ font-family: 'Roboto-Bold';
+}
+.trial-message{
+   background-color:  #fff5c2;
+   padding: 15px 30px; 
+}
+.icon-warning-wrap{
+    margin-right: 14px;
+}
+.warning-icon{
+    width: 42px;
+    height: 42px;
+}
+.warning-message{
+    color: #5d5d5d;
+    font-size: 14px;
+}
+#app .form-input-name__station.field-error{
+    border:none;
+    border-bottom: 1px solid $cancelRed;
+}
+.qr-image{
+    max-height: 100%;
+}

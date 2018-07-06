@@ -1,0 +1,23 @@
+ApiBundle\Entity\BranchStation:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    cashier_reports:
+      expose: true
+    commodity_reports:
+      expose: true
+    problem_reports:
+      expose: true
+    origin_roles:
+      expose: true
+    temp_roles:
+      expose: true
+    pin:
+      expose: true
+    pin_expire:
+      expose: true
+    device_code:
+      expose: true

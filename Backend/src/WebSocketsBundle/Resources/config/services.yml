@@ -1,0 +1,23 @@
+services:
+    service.notification_service:
+        class: WebSocketsBundle\Service\NotificationService
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@gos_web_socket.zmq.pusher'
+            - '@jms_serializer'
+
+    service_topic.notification:
+        class: WebSocketsBundle\Topic\NotificationTopic
+        arguments:
+            - '@gos_web_socket.websocket.client_manipulator'
+        tags:
+            - { name: gos_web_socket.topic }
+
+#    rpc.search:
+#        class: WebSocketsBundle\RPC\SearchRPC
+#        arguments:
+#            - '@gos_web_socket.websocket.client_manipulator'
+#            - '@service.elastica.search'
+#            - '@doctrine.orm.entity_manager'
+#        tags:
+#            - { name: gos_web_socket.rpc }

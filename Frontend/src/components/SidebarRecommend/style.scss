@@ -1,0 +1,20 @@
+.sidebar{
+    flex-basis: 30%;
+    max-width: 260px;
+    border-bottom:  1px solid #e6ecee; 
+    background: $white;
+}
+.recommendations{
+    padding: 30px;
+    width: 100%;
+}
+.recommend-title{
+    color: $gray;
+    font-family: "Roboto-Regular";
+    font-size: 22px;
+    line-height: 1.6;
+}
+.recommend-content{
+    font-size: 15px;
+    color: $lightgrayTxt;
+}

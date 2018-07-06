@@ -1,0 +1,146 @@
+.top-info{
+    width: 100%;
+    max-width: 660px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(28, 60, 77, 0.15);
+}
+.info-row{
+    border-bottom: 1px solid #e6ecee;
+}
+.info-col{
+    border-right: 1px solid #e6ecee;
+    &::last-child{
+        border: none;
+    }
+}
+.buttons-group{
+   margin-left: auto;
+   display: flex;
+}
+.edit-btn, .delete-btn{
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    padding: 0 14px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    text-transform: uppercase;
+    color: #627680;
+    font-size: 13px;
+    font-family: "Roboto-Bold", sans-serif;
+    transition: all ease 300ms;
+    &:hover, &:focus{
+        text-decoration: none;
+        border: none;
+        outline: none;
+    }
+}
+.edit-btn{
+  background-color: #e9eff2;
+  margin-left: 10px;
+  &:hover{
+    background-color: darken(#e9eff2, 10);
+}
+}
+.delete-btn{
+    background-color: $cancelRed;
+    color: #fff;
+    &:hover{
+        background-color: lighten($cancelRed, 10);
+    }
+}
+.adress{
+    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    color: $gray;
+}
+.user__picture{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-size: cover;
+    overflow: hidden;
+}
+.name{
+font-size: 18px;
+color: $gray;
+}
+.post, .info-message{
+font-size: 15px;
+color: #7e8a90;
+line-height: 1.2;
+}
+.user-phone{
+font-size: 16px;
+color: #505d63;
+font-family: "Roboto-Medium", sans-serif;
+}
+.block-phones{
+padding: 20px 30px;
+color: #505d63;
+}
+.phone-circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f4fbfc;
+    align-items: center;
+    justify-content: center;
+}
+.phone-icon{
+    fill: #f53f3f;
+}
+.tel-name{
+    font-size: 15px;
+}
+.tel-number{
+    font-size: 16px;
+    font-family: "Roboto-Medium";
+}
+.icon-warning-wrap{
+    margin-right: 14px;
+    width: 42px;
+    height: 42px;
+}
+.warning-icon{
+    width: 100%;
+    height: 100%;
+}
+.modal-title{
+    color: $gray;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.modal-footer{
+    .confirm-btn, .cancel-btn{
+        border: none;
+        border-radius: 100px;
+        padding: 0.3em 1.8em;
+        color: #fff;
+        text-transform: uppercase;
+        transition: all ease 300ms;
+        &:hover, &:focus, &:active{
+            box-shadow: none;
+            outline: none;
+            border: none;
+        }
+    }
+    .confirm-btn{
+        background-color: $blue;
+        &:hover, &:focus, &:active{
+            background-color: lighten($blue, 20);
+        }
+    }
+    .cancel-btn{
+        background-color: $lightgray;
+        &:hover, &:focus, &:active{
+            background-color: lighten($lightgray, 20);
+        }
+    }
+}

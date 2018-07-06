@@ -1,0 +1,12 @@
+ApiBundle\Entity\PhoneNumber:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    phone_number:
+      expose: true
+    prefix_number:
+      expose: true
+  virtual_properties:
+    getCountryInfo:
+      serialized_name: country

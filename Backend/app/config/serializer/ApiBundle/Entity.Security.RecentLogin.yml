@@ -1,0 +1,17 @@
+ApiBundle\Entity\Security\RecentLogin:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    date:
+      expose: true
+    country_code:
+      expose: true
+    country_name:
+      expose: true
+    region:
+      expose: true
+    city:
+      expose: true
+    ip:
+      expose: true

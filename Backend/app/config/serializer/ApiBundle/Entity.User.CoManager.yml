@@ -1,0 +1,3 @@
+ApiBundle\Entity\User\CoManager:
+  exclusion_policy: ALL
+  properties:

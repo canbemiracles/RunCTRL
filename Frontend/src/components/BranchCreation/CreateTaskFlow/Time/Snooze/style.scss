@@ -1,0 +1,23 @@
+.snooze-wrap{
+  display: flex;
+  flex-direction: column;
+}
+.snooze {
+  width: 100%;
+  padding: 20px 25px;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+.snooze__icn {
+  width: 20px;
+  height: 20px;
+}
+
+.sooze__text {
+  margin-top: -2px;
+  margin-left: 10px;
+
+  color: #000;
+  font-size: 18px;
+}

@@ -1,0 +1,136 @@
+$select-color: #556871;
+$select-background: #fff;
+
+.select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+}
+.select-icon{
+  max-width: 22px; 
+}
+  .select {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    color: $select-color;
+    width: 100%;
+    height: 45px;
+    &.disabled{
+      background-color: #fafcfc;
+      .select-styled{
+        color: #d5dadc;
+        background-color: #f1f3f3;
+      }
+      .select-active-field{
+        color: #d5dadc;
+      }
+    }
+  }
+  .select-styled {
+    position: absolute;
+    height: 45px; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $select-background;
+    padding: 8px 15px;
+    border-radius: 2px;
+    transition: all 0.2s ease-in;
+    border: 1px solid #ccd7dd;
+    display: flex;
+    align-items: center;
+    &.error{
+      border: 1px solid $cancelRed;
+    }
+    &:after {
+      height: 20px;
+      width: 20px;
+      display: block;
+      margin-left: auto;
+      content: '';
+      background-image: url('~images/icons/angle-down.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      border: none;
+      
+    }
+    &.active, &.focus{
+      border: 1px solid $blue;
+    }
+    &.placeholder .select-active-field{
+      color: $lightgray;
+    }
+  }
+  .select-active-field{
+    width: 100%;
+    color: $gray;
+  }
+  .select-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $select-background;
+    border-top: 1px solid #ccd7dd;
+    box-shadow: 0px 5px 10px #bac6ca;
+    li {
+      margin: 0;
+      padding: 5px 10px 5px 15px;
+      display: flex;
+      color: #505d63;
+      align-items: center;
+      transition: all 0.15s ease-in;
+      &:hover {
+        color: $select-color;
+        background: #ecf4f6;
+      }
+      &[rel=""] {
+        display: none;
+      }
+      &.active{
+        color: $select-color;
+        background: #ecf4f6;
+      }
+    }
+  }
+  .select-option-item.disable, .select-option-item.disable:hover{
+    color: #d5dadc;
+    background-color: #fafcfc;
+  }
+  .scroll-pane{
+    overflow: auto;
+  }
+  .select-options-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .select-icon{
+      margin-right: 0.8rem;
+    }
+  }
+  .hidden-input-for-select{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    &:focus{
+      text-indent: -9999em;
+      text-shadow : 9999em 0 0 #000;
+    }
+  }
+  .label-hint{
+    color: #8d9ca5;
+    font-size: 15px;
+    margin-left: 0.5em; 
+  }

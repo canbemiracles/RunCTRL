@@ -1,0 +1,496 @@
+@import 'fonts';
+@import '../variables';
+@import '../mixins';
+
+body, html{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto-Regular', sans-serif;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+}
+#app{
+    min-height: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+}
+
+.app-wrapper{
+    width: 100%;
+    height: 100%; 
+    flex-grow: 1; 
+  }
+.app-wrapper_plug{
+  color: #fff;
+  background-color: rgba(#042a45, .93);
+}  
+figure{
+    margin: 0;
+}
+button{
+    cursor: pointer;
+}
+.p-30{
+padding: 30px;
+}
+.p-25{
+    padding: 25px;
+}
+.p-25-30{
+    padding: 25px 30px;
+}
+.p-tb-30{
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+.p-15{
+    padding: 15px;
+}
+.p-15-lr{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.link{
+    color: #0eb5ed;
+    font-family: "Roboto-Medium";
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: all ease 300ms;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+///FORM
+.form_input {
+    padding: 15px;
+    height: 45px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    width: 100%;
+    font-size: 15px;
+    color: #2e3a40;
+    line-height: 1;
+    border: 1px solid #ccd7dd;
+    &:focus {
+      outline: none;
+      border: 1px solid #0ecdee;
+      box-shadow: none;
+    }
+  }
+  #app .field-error{
+    border: 1px solid $cancelRed;
+  }
+  .error-message{
+    color: $cancelRed;
+  }
+  .form_input-phone-wrap {
+    align-items: center;
+    border-radius: 0 2px 2px 0;
+  }
+  .form-row__phone{
+    align-items: center;
+    .select{
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .form-input__phone{
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    color: #2e3a40;
+    margin-left: 0.5rem;
+    &:focus{
+      outline: none;
+    }
+  }
+  .row-wrap{
+    display: flex;
+    width: 100%;
+    height: 45px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: $blue;
+    border-radius: 100px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    color: #2e3a40;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto-Medium";
+    transition: all ease 300ms;
+    border: 2px solid transparent;
+    &:hover{
+      background-color: #CBF5FC;
+      border: 2px solid $blue;
+      color: $blue;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.disabled{
+      background-color: rgba($lightgray, .3);
+      border-color: rgba($lightgray, .3);
+      color: #fff;
+    }
+  }
+  input[placeholder]{
+    @include placeholder{
+      color: #8c9ba4;
+      transition: all ease 300ms;
+    }
+    &:focus{
+      @include placeholder{
+        color: transparent; 
+      }
+    }
+  }
+ 
+  
+  ///SCROLLBAR
+  .jspVerticalBar
+  {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background: red;
+  }
+  .jspScrollable:focus{
+    border: none;
+    outline: none;
+  }
+  .jspHorizontalBar
+  {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: red;
+  }
+  
+  .jspTrack
+  {
+      background: #ffffff;
+      position: relative;
+  }
+  
+  .jspDrag
+  {
+      background: #0ecdee;
+      position: relative;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+  }
+
+.success{
+    color: $lightgreen;
+    text-align: center;
+}
+
+///SLIDE-SECTION
+.slide-section-container{
+  top: 0;
+  width: calc(100% - 80px);
+}
+.slide-shadow{
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+}
+
+.heading-2{
+  font-family: "Roboto-Regular";
+  font-size: 22px; 
+  color: $gray;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.btn:focus{
+  box-shadow: none;
+  outline: 0;
+}
+
+///transitions
+.slide-enter{
+  opacity: 0;
+}
+.slide-enter-active{
+  animation: slide-in .4s ease-out forwards;
+  transition: opacity .4s;
+}
+.slide-leave-active{
+  animation: slide-out .4s ease-out forwards;
+  transition: opacity .4s;
+  opacity: 0;
+  position: absolute; 
+}
+.slide-move{
+ transition: transform .4s; 
+}
+@keyframes slide-in{
+  from{
+      transform: translateY(20px);
+  }
+  to{
+      transform: translateY(0);
+  }
+}
+@keyframes slide-out{
+  from{
+      transform: translateY(0);
+  }
+  to{
+      transform: translateY(20px);
+  }
+}
+
+
+//Daterangepicker
+.daterangepicker .calendar{
+  max-width: none;
+}
+.daterangepicker .glyphicon-chevron-left{
+    &:after{
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="9" viewBox="0 0 10 9"><defs><path id="edkua" d="M4482.45 234.1l-4.54-4.5-.91.9 4.55 4.5z"/><path id="edkub" d="M4477 230.5l4.55-4.5.9.9-4.54 4.5z"/><path id="edkuc" d="M4477.91 229.83h9.1v1.35h-9.1z"/></defs><g><g transform="translate(-4477 -226)"><g><use fill="#adadad" xlink:href="#edkua"/></g><g><use fill="#adadad" xlink:href="#edkub"/></g><g><use fill="#adadad" xlink:href="#edkuc"/></g></g></g></svg>');
+        display: inline-flex;
+        width: 10px;
+        height: 10px;
+    }
+}
+.daterangepicker .glyphicon-chevron-right{
+    &:after{
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="9" viewBox="0 0 10 9"><defs><path id="bzyba" d="M4772.45 234.1l-4.54-4.5-.91.9 4.55 4.5z"/><path id="bzybb" d="M4767 230.5l4.55-4.5.9.9-4.54 4.5z"/><path id="bzybc" d="M4767.91 229.83h9.1v1.35h-9.1z"/></defs><g><g transform="matrix(-1 0 0 1 4777 -226)"><g><use fill="#adadad" xlink:href="#bzyba"/></g><g><use fill="#adadad" xlink:href="#bzybb"/></g><g><use fill="#adadad" xlink:href="#bzybc"/></g></g></g></svg>');
+        display: inline-flex;
+        width: 10px;
+        height: 10px;
+    }
+}
+.calendar-table{
+  th{
+    color: #949494;
+    font-size: 12px;
+    font-family: 'Roboto-Regular', sans-serif;
+  }
+  .month{
+    color: #505d63;
+    text-transform: uppercase;
+  }
+}
+.daterangepicker .calendar th, .daterangepicker .calendar td{
+  min-width: 50px;
+  height: 30px;
+}
+.daterangepicker td.available:hover, .daterangepicker th.available:hover{
+  background: none;
+  position: relative;
+   z-index: 2;
+  &:before{
+    content: '';
+    display: flex;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #e6ecee;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -14px;
+    z-index: -1;
+  }
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+  background: none;
+  position: relative;
+   z-index: 2;
+  &:before{
+    content: '';
+    display: flex;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: $blue;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -14px;
+    z-index: -1;
+  }
+}
+//datepicker
+
+.datepicker{
+  background-color: #f4fbfc;
+  th{
+    color: #949494;
+    font-size: 12px;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-weight: 400;
+  }
+  .datepicker-switch{
+    padding: 10px 0;
+    color: #505d63;
+    font-family: 'Roboto-Medium', sans-serif;
+    text-transform: uppercase;
+  }
+  .dow{
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .day{
+    color: #949494;
+    height: 26px;
+    font-size: 12px;
+  }
+  table tr td.day.focused, table tr td.day:hover{
+    background: none;
+    position: relative;
+    text-shadow: none;
+    z-index: 2;
+    &:before{
+      content: '';
+      display: flex;
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: #e6ecee;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-left: -13px;
+      margin-top: -13px;
+      z-index: -1;
+    }
+  }
+  table tr td.disabled, table tr td.disabled:hover{
+    color: rgba(#949494, .2);
+    &:before{
+      display: none;
+    }
+  }
+  table tr td.old, table tr td.old:hover,
+  table tr td.new, table tr td.new:hover{
+    color: rgba(#949494, .2);
+  }
+  table tr td.active.active, 
+  table tr td.active:active, 
+  table tr td.active:hover.active, 
+  table tr td.active:hover:active,
+  table tr td.old.active.active, 
+  table tr td.old.active:active, 
+  table tr td.old.active:hover.active, 
+  table tr td.old.active:hover:active{
+    color: #fff;
+    background: none;
+    position: relative;
+    text-shadow: none;
+    z-index: 2;
+    &:before{
+      content: '';
+      display: flex;
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: $blue;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-left: -13px;
+      margin-top: -13px;
+      z-index: -1;
+    }
+  }
+  .datepicker-switch:hover, .next:hover, 
+  .prev:hover, tfoot tr th:hover{
+    background-color: #e6ecee;
+  }
+}
+.datepicker table tr td span.focused, 
+.datepicker table tr td span:hover{
+    background: none;
+    position: relative;
+    text-shadow: none;
+    z-index: 2;
+    &:before{
+      content: '';
+      display: flex;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #e6ecee;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: -1;
+    }
+}
+.datepicker table tr td span.disabled.focused, 
+.datepicker table tr td span.disabled:hover{
+    background: none;
+    position: relative;
+    text-shadow: none;
+    z-index: 2;
+    &:before{
+      display: none;
+    }
+}
+.datepicker table tr td span.active.active, 
+.datepicker table tr td span.active.disabled.active, 
+.datepicker table tr td span.active.disabled:active, 
+.datepicker table tr td span.active.disabled:hover.active, 
+.datepicker table tr td span.active.disabled:hover:active, 
+.datepicker table tr td span.active:active, 
+.datepicker table tr td span.active:hover.active, 
+.datepicker table tr td span.active:hover:active{
+    background: none;
+    position: relative;
+    text-shadow: none;
+    z-index: 2;
+    &:before{
+      content: '';
+      display: flex;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: $blue;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: -1;
+    }
+}
+.clockpicker-popover{
+  position: static;
+  z-index: 1100;
+  border: none;
+  border-bottom: 1px solid #e6ecee;
+}
+.pac-container {
+  z-index: 10000 !important;
+}
