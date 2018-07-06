@@ -8,7 +8,7 @@ Vue.use(VueResourse);
 Vue.use(require('vue-moment'));
 
 
-Vue.http.options.root = 'https://api-dev.runctrl.com';
+Vue.http.options.root = 'http://localhost:8000';
 Vue.http.options.credentials = true;
 
 import roles from './modules/roles';
